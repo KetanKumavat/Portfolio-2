@@ -2,32 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #101415;
 }
+.wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100vh;
+  width: 100%;
+  background-color: #101415;
+  padding: 0 1rem;
+  margin-top: 2vh;
+}
+            label {
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: hsl(0 0% 100% / 0.5);
+            background: hsl(195, 4%, 20% / 0);
+            padding: 0.5rem 1.5rem;
+            border-radius: 100vh;
+            /* width: 130px; */
+            transition: all linear 1s;
+        }
+        label::before {
+            content: '';
+            position: absolute;
+            height: 0.25rem;
+            width: 50%;
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
+            top: 0;
+            left: 50%;
+            transform: translate(-50%,-50%);
+
+            border-radius: 100vh;
+
+            background: hsl(0 0% 100%);
+            box-shadow: 0 0 1rem 1px white, 0 4px 1rem 1px white;
+            opacity: 0;
+            transition: all linear 1s;
+        }
+        /* label:active::before {
+            opacity: 1;
+        } */
+        input:checked + label::before {
+            opacity: 1;
+        }
+        /* label:active {
+            background: hsl(195 4% 20% / 1);
+            color: hsl(0 0% 100%);
+        } */
+        input:checked + label {
+            background: hsl(195 4% 20% / 1);
+            color: hsl(0 0% 100%);
+        }
+
+
+        .tabsHolder {
+            background: hsl(210, 9%, 13%);
+            padding: 0.8rem 1.2rem;
+            border-radius: 100vh;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        input {
+            display: none;
+        }
