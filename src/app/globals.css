@@ -8,9 +8,10 @@
 }
 
 body {
+  scroll-behavior: smooth;
   background-color: #101415;
 }
-.wrapper{
+.wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,60 +20,62 @@ body {
   background-color: #101415;
   padding: 0 1rem;
   margin-top: 2vh;
+  position: sticky;
+  top: 3vh;
 }
-            label {
-            position: relative;
-            text-align: center;
-            text-decoration: none;
-            font-size: 1.5rem;
-            color: hsl(0 0% 100% / 0.5);
-            background: hsl(195, 4%, 20% / 0);
-            padding: 0.5rem 1.5rem;
-            border-radius: 100vh;
-            /* width: 130px; */
-            transition: all linear 1s;
-        }
-        label::before {
-            content: '';
-            position: absolute;
-            height: 0.25rem;
-            width: 50%;
+label {
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: hsl(0 0% 100% / 0.5);
+  background: hsl(195, 4%, 20% / 0);
+  padding: 0.5rem 1.5rem;
+  border-radius: 100vh;
+  /* width: 130px; */
+  transition: ease linear 2s;
+}
+label::before {
+  content: "";
+  position: absolute;
+  height: 0.25rem;
+  width: 50%;
 
-            top: 0;
-            left: 50%;
-            transform: translate(-50%,-50%);
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
 
-            border-radius: 100vh;
+  border-radius: 100vh;
 
-            background: hsl(0 0% 100%);
-            box-shadow: 0 0 1rem 1px white, 0 4px 1rem 1px white;
-            opacity: 0;
-            transition: all linear 1s;
-        }
-        /* label:active::before {
-            opacity: 1;
-        } */
-        input:checked + label::before {
-            opacity: 1;
-        }
-        /* label:active {
-            background: hsl(195 4% 20% / 1);
-            color: hsl(0 0% 100%);
-        } */
-        input:checked + label {
-            background: hsl(195 4% 20% / 1);
-            color: hsl(0 0% 100%);
-        }
+  background: hsl(0 0% 100%);
+  box-shadow: 0 0 1rem 1px white, 0 4px 1rem 1px white;
+  scale: 0 1;
+  transition: ease-in-out linear 0.5s;
+}
+input:checked + label::before {
+  /* opacity: 1; */
+  scale: 1 1;
+}
+input:checked + label {
+  background: hsl(195 4% 20% / 1);
+  color: hsl(0 0% 100%);
+}
 
+.tabsHolder {
+  background: hsl(210, 9%, 13%);
+  padding: 0.8rem 1.2rem;
+  border-radius: 100vh;
+  display: flex;
+  gap: 1.5rem;
+}
 
-        .tabsHolder {
-            background: hsl(210, 9%, 13%);
-            padding: 0.8rem 1.2rem;
-            border-radius: 100vh;
-            display: flex;
-            gap: 1.5rem;
-        }
+input {
+  display: none;
+}
 
-        input {
-            display: none;
-        }
+label:nth-of-type(1)::before {
+  transform-origin: right;
+}
+label:nth-of-type(2)::before {
+  transform-origin: left;
+}

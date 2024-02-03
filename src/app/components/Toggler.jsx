@@ -13,25 +13,27 @@ function Toggler() {
 
   return (
     <div class="wrapper">
-      <div class="tabsHolder">
-        <input
-          type="radio"
-          name="tabs"
-          id="info"
-          value="info"
-          checked={activeButton === "info"}
-          onClick={() => handleButtonClick("info")}
-        />
-        <label for="info">Info</label>
-        <input
-          type="radio"
-          name="tabs"
-          id="work"
-          value="work"
-          onClick={() => handleButtonClick("work")}
-        />
-        <label for="work">Work</label>
-      </div>
+        
+          <div class="tabsHolder">
+            <input
+              type="radio"
+              name="tabs"
+              id="info"
+              value="info"
+              checked={activeButton === "info"}
+              onClick={() => handleButtonClick("info")}
+            />
+            <label for="info">Info</label>
+            <input
+              type="radio"
+              name="tabs"
+              id="work"
+              value="work"
+              onClick={() => handleButtonClick("work")}
+            />
+            <label for="work">Work</label>
+          </div>
+        
     </div>
   );
 }
