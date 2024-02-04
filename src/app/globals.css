@@ -17,7 +17,6 @@ body {
   width: 100%;
   position: sticky;
   top: 1vh;
-  z-index: 50;
 }
 .wrapper {
   display: flex;
