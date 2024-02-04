@@ -1,10 +1,16 @@
-"use client"
-import React, { useState } from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 function Toggler() {
   const Router = useRouter();
   const [activeButton, setActiveButton] = useState("info");
+
+  useEffect(() => {
+    if (activeButton === "work") {
+      Router.push("/work");
+    }
+  }, [activeButton, Router]);
 
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
@@ -12,28 +18,29 @@ function Toggler() {
   };
 
   return (
-    <div class="wrapper">
-        
-          <div class="tabsHolder">
-            <input
-              type="radio"
-              name="tabs"
-              id="info"
-              value="info"
-              checked={activeButton === "info"}
-              onClick={() => handleButtonClick("info")}
-            />
-            <label for="info">Info</label>
-            <input
-              type="radio"
-              name="tabs"
-              id="work"
-              value="work"
-              onClick={() => handleButtonClick("work")}
-            />
-            <label for="work">Work</label>
-          </div>
-        
+    <div className="nav">
+      <div className="wrapper">
+        <div className="tabsHolder">
+          <input
+            type="radio"
+            name="tabs"
+            id="info"
+            value="info"
+            checked={activeButton === "info"}
+            onChange={() => handleButtonClick("info")}
+          />
+          <label htmlFor="info">Info</label>
+          <input
+            type="radio"
+            name="tabs"
+            id="work"
+            value="work"
+            checked={activeButton === "work"}
+            onChange={() => handleButtonClick("work")}
+          />
+          <label htmlFor="work">Work</label>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,9 +1,10 @@
 import Hero from "./components/Home";
-import Toggler from "./components/Toggler";
+import Linker from "./components/Linker";
 
 export default function Home() {
   return (
     <div>
+      <Linker/>
       <Hero />
     </div>
   );
