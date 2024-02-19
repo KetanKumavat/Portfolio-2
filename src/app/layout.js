@@ -15,9 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Toggler />
-        <div className="sticky-container">
-          <Linker />
-        </div>
+        <Linker />
         {children}
       </body>
     </html>

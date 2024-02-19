@@ -15,10 +15,6 @@ body {
   height: 5rem;
   z-index: 100;
 }
-#linker {
-  position: sticky;
-  top: 2vh;
-}
 
 .nav {
   display: flex;

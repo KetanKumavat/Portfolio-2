@@ -1,8 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Ellipse from "../../../public/Ellipse 9.svg";
-import leetcode from "../../../public/leetcode.svg";
-import leetcode3 from "../../../public/leetcode3.png";
 import Image from "next/image";
 
 function Home() {
