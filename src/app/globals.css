@@ -15,7 +15,7 @@ body {
   height: 5rem;
   z-index: 100;
 }
-#linker{
+#linker {
   position: sticky;
   top: 2vh;
 }
@@ -26,6 +26,7 @@ body {
   width: 100%;
   position: sticky;
   top: 1vh;
+  /* opacity: 20; */
 }
 .wrapper {
   display: flex;
@@ -39,6 +40,7 @@ body {
   border: solid #101415;
   position: sticky;
   top: 3vh;
+  /* opacity: 0.5; */
 }
 label {
   position: relative;

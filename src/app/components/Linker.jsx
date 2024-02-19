@@ -5,11 +5,11 @@ function Linker() {
     <div className="flex justify-end mr-24 -mt-12 z-50">
       <div className="flex gap-8" id="linker">
         <div className="flex items-center gap-2">
-          <h1 className="text-white text-light text-sm">LinkedIn</h1>
           <a
-            href="https://www.linkedin.com/in/ketankumavat/"
+            href="https://www.linkedin.com/in/ketankumavat"
             target="_blank"
-            rel="noopener noreferrer">
+            className="flex flex-row gap-2 items-center">
+            <h1 className="text-white text-light text-sm">LinkedIn</h1>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="1.5rem"
@@ -26,11 +26,11 @@ function Linker() {
           </a>
         </div>
         <div className="flex items-center gap-2">
-          <h1 className="text-white text-light text-sm">Resume</h1>
           <a
             href="https://drive.google.com/file/d/1zi180gFerL1HIK6lzFZVHC3C3cyY1ype/view?usp=sharing"
             target="_blank"
-            rel="noopener noreferrer">
+            className="flex flex-row gap-2">
+            <h1 className="text-white text-light text-sm">Resume</h1>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="1.5rem"
