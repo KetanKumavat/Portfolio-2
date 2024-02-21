@@ -2,7 +2,7 @@ import React from "react";
 
 function Linker() {
   return (
-    <div className="flex justify-end -mt-2 z-50" id="linker">
+    <div className="flex justify-end -mt-2 z-50 sticky top-24" id="linker">
       <div className="flex justify-end mr-24 -mt-12 z-50">
         <div className="flex gap-8">
           <div className="flex items-center gap-2">
@@ -28,7 +28,7 @@ function Linker() {
           </div>
           <div className="flex items-center gap-2">
             <a
-              href="https://drive.google.com/file/d/18_PFA1mYaszcsgIwyWYBeU13UkseuqOh/view?usp=sharing"
+              href="https://drive.google.com/file/d/1m0a33a_g1nPyLzLrv0Rym2czFK7DkRBF/view?usp=sharing"
               target="_blank"
               className="flex flex-row gap-2">
               <h1 className="text-white text-light text-sm">Resume</h1>

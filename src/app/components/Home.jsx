@@ -29,11 +29,13 @@ function Home() {
           alt="ellipse"
           className="absolute -mt-44 pointer-events-none "
         />
-        <h1 className="text-8xl bg-gradient-to-b from-white via-zinc-500 to-white/15 text-transparent bg-clip-text font-bold">
+        <h1 className="text-8xl bg-gradient-to-b from-white via-zinc-500 to-white/10 text-transparent bg-clip-text font-bold cursor-default">
           Ketan Kumavat
         </h1>
         <div className="h-2"></div>
-        <h2 className="text-3xl text-white opacity-50">Full Stack Developer</h2>
+        <h2 className="text-3xl text-white opacity-55 cursor-default">
+          Full Stack Developer
+        </h2>
       </div>
       {/* {github && (
         <div>
