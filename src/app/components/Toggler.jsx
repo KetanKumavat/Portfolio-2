@@ -7,10 +7,8 @@ function Toggler() {
   const [activeButton, setActiveButton] = useState("info");
 
   useEffect(() => {
-    if (activeButton === "work") {
-      Router.push("/work");
-    }
-  }, [activeButton, Router]);
+    setActiveButton(Router.pathname === "/work" ? "work" : "info");
+  }, [Router.pathname]);
 
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);

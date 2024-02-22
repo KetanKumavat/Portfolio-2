@@ -3,7 +3,7 @@ import React from "react";
 function Linker() {
   return (
     <div className="flex justify-end -mt-2 z-50 sticky top-24" id="linker">
-      <div className="flex justify-end mr-24 -mt-12 z-50">
+      <div className="flex justify-end mr-14 -mt-16 z-50">
         <div className="flex gap-8">
           <div className="flex items-center gap-2">
             <a

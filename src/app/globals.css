@@ -30,10 +30,10 @@ body {
   align-items: center;
   border-radius: 100vh;
   width: max-content;
-  background-color: #101415;
+  /* background-color: #101415; */
   /* padding: 0 1rem; */
   margin-top: 2vh;
-  border: solid #101415;
+  /* border: solid #101415; */
   position: sticky;
   top: 3vh;
   /* opacity: 0.5; */
