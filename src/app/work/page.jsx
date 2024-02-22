@@ -4,7 +4,7 @@ import Projects from "../components/Projects";
 
 function page() {
   return (
-    <div className="w-full h-screen flex justify-center items-center">
+    <div className="w-full flex justify-center items-center">
       <Projects />
     </div>
   );

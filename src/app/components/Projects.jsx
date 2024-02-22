@@ -94,52 +94,72 @@ function extractImageUrls(text) {
 
 function Projects() {
   const starredRepositories = useStarredRepositories();
+  const orderedRepositories = [
+    // Add your desired repo(s) here first
+    // For example, to display a repo with name "my-repo" first:
+    ...starredRepositories.filter(repo => repo.name === "Insightify"),
+    ...starredRepositories.filter(repo => repo.name === "Lumi"),
+    // Then add the rest of the repositories
+    ...starredRepositories.filter(repo => repo.name !== "Insightify" && repo.name !== "Lumi"),
+  ];
 
   return (
-    <div className="w-full h-screen overflow-y-scroll grid place-items-center">
-      {starredRepositories.map((repo) => {
-        const imageUrls = extractImageUrls(repo.readmeText || "");
-        return (
-          <div
-            key={repo.id}
-            className="bg-zinc-950 p-6 my-4 w-2/5 aspect-square rounded-lg shadow-lg">
-            <h2 className="text-white font-bold text-xl">{repo.name}</h2>
-            {repo.description && (
-              <p className="text-gray-300 mt-2">{repo.description}</p>
-            )}
-            <div className="flex flex-wrap mt-4">
-              {imageUrls.map((imageUrl, index) => (
-                <Image
-                  key={index}
-                  src={imageUrl}
-                  alt={`Image ${index}`}
-                  className="w-32 h-32 object-cover mr-2 mb-2 rounded-lg"
-                />
-              ))}
-            </div>
-            <div className="mt-4">
-              <a
-                href={repo.url}
-                className="text-blue-500 hover:underline"
-                target="_blank"
-                rel="noopener noreferrer">
-                View Github Repository
-              </a>
-              {repo.homepageUrl && (
+  
+  <div>
+  <h1 className="text-white text-3xl font-semibold text-center mt-[20vh]">
+    Yap Yap
+  </h1>
+    <div className="w-full grid grid-cols-2 place-items-center">
+    {orderedRepositories.map((repo) => {
+      const imageUrls = extractImageUrls(repo.readmeText || "");
+      return (
+        // eslint-disable-next-line react/jsx-key
+        <div className="flex flex-col justify-center items-center w-full h-screen">
+          <div id="cards" className="w-full flex justify-center">
+            <div
+              key={repo.id}
+              className="p-6 w-3/5 z-50 aspect-square rounded-xl shadow-2xl border-solid border-2 border-zinc-white/13"
+              style={{
+                border: "2px solid transparent",
+                background: "rgba(0, 0, 0, 0.8)",
+                boxShadow:
+                  "5px 5px 10px rgba(0, 0, 0, 0.6), -5px 5px 10px rgba(0, 0, 0, 0.6), 0 5px 10px rgba(0, 0, 0, 0.6)",
+              }}>
+              <h2 className="text-white font-bold text-center text-3xl mt-4 mb-4">
+                {repo.name}
+              </h2>
+              {repo.description && (
+                <p className="text-gray-200 mt-10 text-center">
+                  {repo.description}
+                </p>
+              )}
+              <div className="mt-24 flex justify-center items-center flex-col gap-10">
+                {repo.homepageUrl && (
+                  <a
+                    href={repo.homepageUrl}
+                    className="bg-neutral-700 text-center text-white font-semibold w-1/2 flex justify-center py-3 rounded-full hover:bg-zinc-800"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    View Project
+                  </a>
+                )}
                 <a
-                  href={repo.homepageUrl}
-                  className="ml-4 text-blue-500 hover:underline"
+                  href={repo.url}
+                  className="text-white text-md mb-4 font-lightweight text-center hover:underline"
                   target="_blank"
                   rel="noopener noreferrer">
-                  View Project
+                  View Github Repository
                 </a>
-              )}
+              </div>
             </div>
           </div>
-        );
-      })}
-    </div>
-  );
+        </div>
+      );
+    })}
+  </div>
+  </div>
+);
+
 }
 
 export default Projects;

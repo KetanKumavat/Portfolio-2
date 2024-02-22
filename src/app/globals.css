@@ -98,3 +98,28 @@ label:nth-of-type(1)::before {
 label:nth-of-type(2)::before {
   transform-origin: left;
 }
+
+#cards:before{
+  content: '';
+  top: -2px;
+  left:-2px;
+  right: -2px;
+  bottom: -2px;
+  background: white;
+  z-index: -1;
+}
+#cards:after{
+  content: '';
+  top: -2px;
+  left:-2px;
+  right: -2px;
+  bottom: -2px;
+  background: white;
+  z-index: -2;
+  filter: blur(40px);
+}
+
+#cards:before,
+#cards:after{
+  background: linear-gradient(235deg,#89ff00,#060c21,#00bcd4)
+}
