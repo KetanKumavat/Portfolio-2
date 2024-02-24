@@ -38,16 +38,16 @@ function Home() {
           Full Stack Developer
         </h2>
       </div> */}
-      <div className="h-full -mt-[32vh] w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
+      <div className="h-full w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
         {/* <Image
           src={Ellipse}
           alt="ellipse"
           className="absolute -mt-44 pointer-events-none"
         /> */}
-        <h1 className="md:text-7xl text-3xl bg-gradient-to-b from-white via-zinc-400 to-white/10 text-transparent bg-clip-text cursor-default lg:text-8xl flex justify-center items-center mt-16 font-bold text-center relative z-20">
+        <h1 className="md:text-8xl text-7xl bg-gradient-to-b from-white via-zinc-400 to-white/10 text-transparent bg-clip-text cursor-default lg:text-8xl flex justify-center items-center font-bold text-center relative -z-20">
           Ketan Kumavat
         </h1>
-        <h2 className="text-3xl text-center text-white opacity-50 leading-7 cursor-default">
+        <h2 className="text-2xl text-center text-white opacity-50 leading-7 cursor-default">
           Full Stack Developer
         </h2>
         <div className="h-2"></div>
@@ -71,7 +71,7 @@ function Home() {
           <div className="absolute inset-0 bg-[#101415] w-full h-full [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
         </div>
       </div>
-      <div className="flex mb-16 flex-row gap-5 justify-center items-center">
+      <div className="flex mb-24 flex-row gap-5 justify-center items-center">
         <div className="">
           <a href="https://github.com/KetanKumavat" target="_blank">
             <svg
