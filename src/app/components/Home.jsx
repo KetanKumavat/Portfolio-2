@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Ellipse from "../../../public/Ellipse 9.svg";
 import Image from "next/image";
+import { SparklesCore } from "./ui/Sparkles";
 
 function Home() {
   // const [github, setGithub] = useState(null);
@@ -23,7 +24,7 @@ function Home() {
 
   return (
     <div className="flex flex-col w-full h-screen justify-center items-center z-0">
-      <div className="flex flex-col justify-center items-center relative">
+      {/* <div className="flex flex-col justify-center items-center relative">
         <Image
           src={Ellipse}
           alt="ellipse"
@@ -36,21 +37,42 @@ function Home() {
         <h2 className="text-3xl text-white opacity-55 cursor-default">
           Full Stack Developer
         </h2>
-      </div>
-      {/* {github && (
-        <div>
-          <Image
-            src={github.avatar_url}
-            alt="github_avatar"
-            width={500}
-            height={500}
-            className="w-full h-10"
+      </div> */}
+      <div className="h-full -mt-[32vh] w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
+        {/* <Image
+          src={Ellipse}
+          alt="ellipse"
+          className="absolute -mt-44 pointer-events-none"
+        /> */}
+        <h1 className="md:text-7xl text-3xl bg-gradient-to-b from-white via-zinc-400 to-white/10 text-transparent bg-clip-text cursor-default lg:text-8xl flex justify-center items-center mt-16 font-bold text-center relative z-20">
+          Ketan Kumavat
+        </h1>
+        <h2 className="text-3xl text-center text-white opacity-50 leading-7 cursor-default">
+          Full Stack Developer
+        </h2>
+        <div className="h-2"></div>
+        <div className="w-[40rem] h-40 relative">
+          {/* Gradients */}
+
+          <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+          <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
+          <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
+          <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+          {/* Core component */}
+          <SparklesCore
+            background="transparent"
+            minSize={1}
+            maxSize={2}
+            particleDensity={700}
+            className=" w-full rounded-full h-full"
+            particleColor="#FFFFFF"
           />
-          <span>{github.login}</span>
+          {/* <div className="absolute flex justify-center items-center inset-0 w-full h-full rounded-full [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div> */}
+          <div className="absolute inset-0 bg-[#101415] w-full h-full [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
         </div>
-      )} */}
-      <div className="flex flex-row gap-5 mt-48 mb-4 justify-center items-center">
-        <div>
+      </div>
+      <div className="flex mb-16 flex-row gap-5 justify-center items-center">
+        <div className="">
           <a href="https://github.com/KetanKumavat" target="_blank">
             <svg
               xmlns="http://www.w3.org/2000/svg"
