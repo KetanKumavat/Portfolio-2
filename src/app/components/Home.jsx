@@ -71,8 +71,8 @@ function Home() {
           <div className="absolute inset-0 bg-[#101415] w-full h-full [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
         </div>
       </div>
-      <div className="flex mb-24 flex-row gap-5 justify-center items-center">
-        <div className="">
+      <div className="flex -mt-2 sm:-mt-4 mb-32 flex-row gap-5 justify-center items-center">
+        <div>
           <a href="https://github.com/KetanKumavat" target="_blank">
             <svg
               xmlns="http://www.w3.org/2000/svg"

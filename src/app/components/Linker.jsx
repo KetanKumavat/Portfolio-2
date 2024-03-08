@@ -1,7 +1,8 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 
 function Linker() {
-  return (
+    return (
     <div className="flex justify-end -mt-2 z-50 sticky top-24" id="linker">
       <div className="flex justify-end mr-14 -mt-16 z-50">
         <div className="flex gap-8">
