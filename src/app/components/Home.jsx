@@ -23,7 +23,7 @@ function Home() {
   // }, []);
 
   return (
-    <div className="flex flex-col w-full h-screen justify-center items-center z-0">
+    <div className="flex flex-col w-full h-screen justify-center items-center z-0 bg-transparent">
       {/* <div className="flex flex-col justify-center items-center relative">
         <Image
           src={Ellipse}
@@ -44,7 +44,10 @@ function Home() {
           alt="ellipse"
           className="absolute -mt-44 pointer-events-none"
         /> */}
-        <h1 className="md:text-8xl text-7xl bg-gradient-to-b from-white via-zinc-400 to-white/10 text-transparent bg-clip-text cursor-default lg:text-8xl flex justify-center items-center font-bold text-center relative -z-20">
+        {/* <h1 className="md:text-8xl text-7xl bg-gradient-to-b from-white via-zinc-400 to-white/10 text-transparent bg-clip-text cursor-default lg:text-8xl flex justify-center items-center font-bold text-center relative -z-20">
+          Ketan Kumavat
+        </h1> */}
+        <h1 className="text-8xl bg-gradient-to-b from-white via-zinc-500 to-white/10 text-transparent bg-clip-text font-bold cursor-default">
           Ketan Kumavat
         </h1>
         <h2 className="text-2xl text-center text-white opacity-50 leading-7 cursor-default">
@@ -52,10 +55,9 @@ function Home() {
         </h2>
         <div className="h-2"></div>
         <div className="w-[40rem] h-40 relative">
-          <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
-          <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
-          <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
-          <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+          <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-white/45 to-transparent h-[2px] w-3/4 blur-sm" />
+          <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent  to-transparent h-[5px] w-1/4 blur-sm" />
+          <div className="absolute inset-x-60 h-[3.2px] top-0 bg-gradient-to-r from-transparent via-white/90 to-transparent h-px w-1/4" />
           <SparklesCore
             background="transparent"
             minSize={1}
@@ -165,7 +167,7 @@ function Home() {
             </svg>
           </a>
         </div>
-        <div>
+        {/* <div>
           <a href="https://www.codechef.com/users/ketank03" target="_blank">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -195,7 +197,7 @@ function Home() {
               </g>
             </svg>
           </a>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -92,21 +92,36 @@ function extractImageUrls(text) {
   return matches;
 }
 
-function Projects() {
+function  Projects() {
   const starredRepositories = useStarredRepositories();
   const orderedRepositories = [
     // Add your desired repo(s) here first
     // For example, to display a repo with name "my-repo" first:
     ...starredRepositories.filter((repo) => repo.name === "Insightify"),
     ...starredRepositories.filter((repo) => repo.name === "CoinCanvas"),
+    ...starredRepositories.filter((repo) => repo.name === "echo"),
+    ...starredRepositories.filter((repo) => repo.name === "SuperWOMEN"),
     ...starredRepositories.filter((repo) => repo.name === "Lumi"),
-    // Then add the rest of the repositories
+    ...starredRepositories.filter((repo) => repo.name === "WeatheX"),
+
     ...starredRepositories.filter(
       (repo) =>
         repo.name !== "Insightify" &&
         repo.name !== "Lumi" &&
-        repo.name !== "CoinCanvas"
+        repo.name !== "CoinCanvas" &&
+        repo.name !== "echo" &&
+        repo.name !== "SuperWOMEN" &&
+        repo.name !== "WeatheX"
     ),
+  ];
+
+  const projectImages = [
+    "./insightify.jpeg",
+    "./coincanvas.png",
+    "./echo.png",
+    "./superwomen.png",
+    "./lumi.png",
+    "./weathex.png",
   ];
 
   return (
@@ -115,7 +130,7 @@ function Projects() {
         Yap Yap
       </h1>
       <div className="w-full grid grid-cols-2 -z-50 place-items-center">
-        {orderedRepositories.map((repo) => {
+        {orderedRepositories.map((repo,index) => {
           const imageUrls = extractImageUrls(repo.readmeText || "");
           return (
             // eslint-disable-next-line react/jsx-key
@@ -130,6 +145,16 @@ function Projects() {
                     boxShadow:
                       "5px 5px 10px rgba(0, 0, 0, 0.6), -5px 5px 10px rgba(0, 0, 0, 0.6), 0 5px 10px rgba(0, 0, 0, 0.6)",
                   }}>
+                  {projectImages
+                    .filter((img, idx) => idx === index)
+                    .map((imageUrl) => (
+                      <img
+                        key={imageUrl}
+                        src={imageUrl}
+                        alt="Project Screenshot"
+                        className="w-full flex ml-[6vh] max-w-[400px] h-auto rounded-lg"
+                      />
+                    ))}
                   <h2 className="text-white font-bold text-center text-3xl mt-4 mb-4">
                     {repo.name}
                   </h2>
