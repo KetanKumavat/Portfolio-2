@@ -85,29 +85,29 @@ export const Card = ({
         <div className="p-4">
           <img
             src={imageUrl}
-            alt="Project Screenshot"
-            layout="responsive"
-            width={400}
-            height={300}
+            alt="Project"
+            // width={400}
+            // height={300}
             className="w-full h-auto rounded-lg"
           />
+          {children}
           <div className="flex justify-center gap-4 mt-4">
             <a
               href={githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-neutral-700 text-center text-white font-semibold w-1/2 flex justify-center py-3 rounded-full hover:bg-zinc-800">
+              className="bg-neutral-700 text-center text-white text-2xl font-semibold w-1/2 flex justify-center py-3 rounded-full hover:bg-zinc-800">
               View Github Repo
             </a>
             <a
               href={deployedUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-neutral-700 text-center text-white font-semibold w-1/2 flex justify-center py-3 rounded-full hover:bg-zinc-800">
+              className="bg-neutral-700 text-center text-white text-2xl font-semibold w-1/2 flex justify-center py-3 rounded-full hover:bg-zinc-800">
               View Deployed Link
             </a>
           </div>
-          {children}
+          {/* {children} */}
         </div>
       </div>
     </div>
@@ -124,7 +124,7 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn("text-zinc-100 font-bold tracking-wide mt-4", className)}>
+    <h4 className={cn(" text-4xl text-center text-zinc-100 font-bold tracking-wide mt-4", className)}>
       {children}
     </h4>
   );
@@ -139,7 +139,7 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm",
+        "mt-8 text-zinc-200 tracking-wide leading-relaxed text-xl text-center",
         className
       )}>
       {children}
