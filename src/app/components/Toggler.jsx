@@ -18,7 +18,7 @@ function Toggler() {
   return (
     <div className="nav">
       <div className="wrapper">
-        <div className="tabsHolder">
+        <div id="tabsHolder" className="">
           <input
             type="radio"
             name="tabs"

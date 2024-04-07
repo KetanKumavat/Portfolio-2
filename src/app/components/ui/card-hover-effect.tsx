@@ -2,6 +2,8 @@ import { cn } from "../../../utils/cn";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
+
 
 export const HoverEffect = ({
   items,
@@ -11,6 +13,8 @@ export const HoverEffect = ({
     title: string;
     description: string;
     link: string;
+    image: string;
+    homepageUrl?: string;
   }[];
   className?: string;
 }) => {
@@ -19,20 +23,19 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10",
+        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-2  py-10",
         className
       )}>
       {items.map((item, idx) => (
-        <Link
-          href={item?.link}
-          key={item?.link}
-          className="relative group  block p-2 h-full w-full"
+        <div
+          key={item.link}
+          className="relative group -p-16"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}>
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-3xl"
+                className="absolute h-full w-full p-0 bg-neutral-600 block rounded-3xl"
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -46,11 +49,14 @@ export const HoverEffect = ({
               />
             )}
           </AnimatePresence>
-          <Card>
+          <Card
+            imageUrl={item.image}
+            githubUrl={item.link}
+            deployedUrl={item.homepageUrl}>
             <CardTitle>{item.title}</CardTitle>
             <CardDescription>{item.description}</CardDescription>
           </Card>
-        </Link>
+        </div>
       ))}
     </div>
   );
@@ -59,22 +65,57 @@ export const HoverEffect = ({
 export const Card = ({
   className,
   children,
+  imageUrl,
+  githubUrl,
+  deployedUrl,
 }: {
   className?: string;
   children: React.ReactNode;
+  imageUrl: string;
+  githubUrl: string;
+  deployedUrl: string;
 }) => {
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
+        "rounded-2xl h-full w-full overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-0 scale-75",
         className
       )}>
-      <div className="relative z-50">
-        <div className="p-4">{children}</div>
+      <div className="relative z-0">
+        <div className="p-4">
+          <img
+            src={imageUrl}
+            alt="Project Screenshot"
+            layout="responsive"
+            width={400}
+            height={300}
+            className="w-full h-auto rounded-lg"
+          />
+          <div className="flex justify-center gap-4 mt-4">
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-neutral-700 text-center text-white font-semibold w-1/2 flex justify-center py-3 rounded-full hover:bg-zinc-800">
+              View Github Repo
+            </a>
+            <a
+              href={deployedUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-neutral-700 text-center text-white font-semibold w-1/2 flex justify-center py-3 rounded-full hover:bg-zinc-800">
+              View Deployed Link
+            </a>
+          </div>
+          {children}
+        </div>
       </div>
     </div>
   );
 };
+
+
+
 export const CardTitle = ({
   className,
   children,

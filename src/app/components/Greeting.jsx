@@ -16,7 +16,7 @@ function Greeting() {
   }, []);
 
   return (
-    <div className="flex justify-start ml-9 -mt-16 sticky top-12" style={{width:"fit-content"}}>
+    <div className="flex justify-start ml-9 -mt-16 top-12 w-2 md:w-fit scale-90 md:scale-100">
       <h1 className="text-white font-medium text-2xl">{timeOfDay}.</h1>
     </div>
   );

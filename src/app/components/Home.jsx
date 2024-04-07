@@ -47,7 +47,7 @@ function Home() {
         {/* <h1 className="md:text-8xl text-7xl bg-gradient-to-b from-white via-zinc-400 to-white/10 text-transparent bg-clip-text cursor-default lg:text-8xl flex justify-center items-center font-bold text-center relative -z-20">
           Ketan Kumavat
         </h1> */}
-        <h1 className="text-8xl bg-gradient-to-b from-white via-zinc-500 to-white/10 text-transparent bg-clip-text font-bold cursor-default">
+        <h1 className="text-8xl bg-gradient-to-b text-center from-white via-zinc-500 to-white/10 text-transparent bg-clip-text font-bold cursor-default">
           Ketan Kumavat
         </h1>
         <h2 className="text-2xl text-center text-white opacity-50 leading-7 cursor-default">
@@ -63,14 +63,14 @@ function Home() {
             minSize={1}
             maxSize={2}
             particleDensity={700}
-            className=" w-full rounded-full h-full"
+            className=" hidden md:block w-full rounded-full h-full md:scale-100"
             particleColor="#FFFFFF"
           />
           {/* <div className="absolute flex justify-center items-center inset-0 w-full h-full rounded-full [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div> */}
           <div className="absolute inset-0 bg-[#101415] w-full h-full [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
         </div>
       </div>
-      <div className="flex -mt-2 sm:-mt-4 mb-32 flex-row gap-5 justify-center items-center">
+      <div className="flex md:mb-32 lg:mb-32 mb-60 flex-row gap-5 justify-center items-center">
         <div>
           <a href="https://github.com/KetanKumavat" target="_blank">
             <svg

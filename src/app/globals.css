@@ -74,6 +74,7 @@ opacity: 1;
   box-shadow: 0 0 1rem 1px white, 0 4px 1rem 1px white;
   scale: 0 1;
   transition: ease-in-out linear 0.5s;
+  backdrop-filter: blur(10px);
 }
 input:checked + label::before {
   opacity: 1;
@@ -85,10 +86,11 @@ input:checked + label {
   color: hsl(0 0% 100%);
 }
 
-.tabsHolder {
+#tabsHolder {
   /* width: fit-content; */
-  background: hsl(210, 9%, 13%);
-  background: transparent;
+  background: hsl(210, 9%, 0.6);
+  /* background: transparent; */
+  backdrop-filter: blur(11px);
   opacity: 1;
   border: solid 0.2px rgba(255, 255, 255, .5);
   padding: 0.8rem 1.2rem;
@@ -102,7 +104,7 @@ input:checked + label {
 input {
   display: none;
   cursor: pointer;
-  opacity: 1;
+  opacity: 1;backdrop-filter: blur(10px);
 }
 
 label:nth-of-type(1)::before {

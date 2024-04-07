@@ -1,4 +1,3 @@
-// components/Projects.jsx
 "use client";
 import React, { useEffect, useState } from "react";
 import {
@@ -9,7 +8,7 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import Image from "next/image";
-
+import { HoverEffect } from "./ui/card-hover-effect";
 function useStarredRepositories() {
   const [starredRepositories, setStarredRepositories] = useState([]);
 
@@ -122,78 +121,20 @@ function  Projects() {
     "./superwomen.png",
     "./lumi.png",
     "./weathex.png",
+    "./megablog.png",
+    "./joke-gen.png"
   ];
 
   return (
-    <div>
-      <h1 className="text-white text-3xl font-semibold text-center mt-[20vh]">
-        Yap Yap
-      </h1>
-      <div className="w-full grid grid-cols-2 -z-50 place-items-center">
-        {orderedRepositories.map((repo,index) => {
-          const imageUrls = extractImageUrls(repo.readmeText || "");
-          return (
-            // eslint-disable-next-line react/jsx-key
-            <div className="flex flex-col justify-center items-center w-full h-screen">
-              <div id="cards" className="w-full flex justify-center">
-                <div
-                  key={repo.id}
-                  className="p-6 w-3/5 z-50 aspect-square rounded-xl shadow-2xl border-solid border-2 border-zinc-white/13"
-                  style={{
-                    border: "2px solid transparent",
-                    background: "rgba(0, 0, 0, 0.8)",
-                    boxShadow:
-                      "5px 5px 10px rgba(0, 0, 0, 0.6), -5px 5px 10px rgba(0, 0, 0, 0.6), 0 5px 10px rgba(0, 0, 0, 0.6)",
-                  }}>
-                  {projectImages
-                    .filter((img, idx) => idx === index)
-                    .map((imageUrl) => (
-                      <img
-                        key={imageUrl}
-                        src={imageUrl}
-                        alt="Project Screenshot"
-                        className="w-full flex ml-[6vh] max-w-[400px] h-auto rounded-lg"
-                      />
-                    ))}
-                  <h2 className="text-white font-bold text-center text-3xl mt-4 mb-4">
-                    {repo.name}
-                  </h2>
-                  {repo.description && (
-                    <p className="text-gray-200 mt-10 text-center">
-                      {repo.description}
-                    </p>
-                  )}
-                  <div className="mt-24 flex justify-center items-center flex-col gap-10">
-                    {repo.homepageUrl ? (
-                      <a
-                        href={repo.homepageUrl}
-                        className="bg-neutral-700 text-center text-white font-semibold w-1/2 flex justify-center py-3 rounded-full hover:bg-zinc-800"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        View Project
-                      </a>
-                    ) : (
-                      <div>
-                        <h1 className="text-gray-300 text-md font-semibold text-center">
-                          Work in Progress...
-                        </h1>
-                      </div>
-                    )}
-                    <a
-                      href={repo.url}
-                      className="text-white text-md mb-4 font-lightweight text-center hover:underline"
-                      target="_blank"
-                      rel="noopener noreferrer">
-                      View Github Repository
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
+    <HoverEffect
+      items={orderedRepositories.map((repo) => ({
+        title: repo.name,
+        description: repo.description || "Work in Progress...",
+        link: repo.url,
+        homepageUrl: repo.homepageUrl || "",
+        image: projectImages[orderedRepositories.indexOf(repo)],
+      }))}
+    />
   );
 }
 
