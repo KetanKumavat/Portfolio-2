@@ -82,7 +82,7 @@ function useStarredRepositories() {
 }
 
 function extractImageUrls(text) {
-  const regex = /<img.*?src="(.*?)".*?>/g;
+  const regex = /<img.*?src="([^"]*)".*?>/g;
   const matches = [];
   let match;
   while ((match = regex.exec(text))) {
@@ -91,8 +91,28 @@ function extractImageUrls(text) {
   return matches;
 }
 
+
 function  Projects() {
   const starredRepositories = useStarredRepositories();
+   const [readmeImages, setReadmeImages] = useState([]);
+
+  useEffect(() => {
+    const fetchReadmeImages = async () => {
+      const imagesPromises = starredRepositories.map(async (repo) => {
+        const readmeResponse = await fetch(
+          `https://raw.githubusercontent.com/KetanKumavat/${repo.name}/main/README.md`
+        );
+        const readmeText = await readmeResponse.text();
+        const images = extractImageUrls(readmeText);
+        return { repoName: repo.name, images };
+      });
+      const imagesData = await Promise.all(imagesPromises);
+      setReadmeImages(imagesData);
+    };
+
+    fetchReadmeImages();
+  }, [starredRepositories]);
+
   const orderedRepositories = [
     // Add your desired repo(s) here first
     // For example, to display a repo with name "my-repo" first:
@@ -101,7 +121,9 @@ function  Projects() {
     ...starredRepositories.filter((repo) => repo.name === "echo"),
     ...starredRepositories.filter((repo) => repo.name === "SuperWOMEN"),
     ...starredRepositories.filter((repo) => repo.name === "Lumi"),
+    ...starredRepositories.filter((repo) => repo.name === "MegaBlog"),
     ...starredRepositories.filter((repo) => repo.name === "WeatheX"),
+    ...starredRepositories.filter((repo) => repo.name === "Todo"),
 
     ...starredRepositories.filter(
       (repo) =>
@@ -110,7 +132,9 @@ function  Projects() {
         repo.name !== "CoinCanvas" &&
         repo.name !== "echo" &&
         repo.name !== "SuperWOMEN" &&
-        repo.name !== "WeatheX"
+        repo.name !== "WeatheX" &&
+        repo.name !== "Todo" &&
+        repo.name !== "MegaBlog"
     ),
   ];
 
@@ -120,9 +144,11 @@ function  Projects() {
     "./echo.png",
     "./superwomen.png",
     "./lumi.png",
-    "./weathex.png",
     "./megablog.png",
-    "./joke-gen.png"
+    "./weathex.png",
+    "./todo.png",
+
+    "./joke-gen.png",
   ];
 
   return (
@@ -135,6 +161,18 @@ function  Projects() {
         image: projectImages[orderedRepositories.indexOf(repo)],
       }))}
     />
+
+    // <HoverEffect
+    //   items={orderedRepositories.map((repo) => ({
+    //     title: repo.name,
+    //     description: repo.description || "Work in Progress...",
+    //     link: repo.url,
+    //     homepageUrl: repo.homepageUrl || "",
+    //     image:
+    //       readmeImages.find((readme) => readme.repoName === repo.name)
+    //         ?.images[0] || "",
+    //   }))}
+    // />
   );
 }
 

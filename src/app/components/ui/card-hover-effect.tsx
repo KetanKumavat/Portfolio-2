@@ -23,24 +23,25 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-2  py-10",
+        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-2  py-10 z-z-1 overflow-x-hidden",
         className
       )}>
       {items.map((item, idx) => (
         <div
           key={item.link}
-          className="relative group -p-16"
+          className="relative group"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}>
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute h-full w-full p-0 bg-neutral-600 block rounded-3xl"
+                className="absolute h-full w-full bg-neutral-800 p-2 rounded-3xl -p-"
                 layoutId="hoverBackground"
-                initial={{ opacity: 0 }}
+                initial={{ opacity: 0}}
                 animate={{
                   opacity: 1,
                   transition: { duration: 0.15 },
+                  
                 }}
                 exit={{
                   opacity: 0,
@@ -78,7 +79,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-0 scale-75",
+        "rounded-2xl h-full w-full overflow-hidden bg-black border-2 border-white dark:border-white/[0.2] group-hover:border-neutral-900 relative z-0 scale-75",
         className
       )}>
       <div className="relative z-0">
@@ -96,14 +97,14 @@ export const Card = ({
               href={githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-neutral-700 text-center text-white text-2xl font-semibold w-1/2 flex justify-center py-3 rounded-full hover:bg-zinc-800">
+              className="bg-neutral-800 text-center text-white text-xl md:text-2xl font-semibold w-1/2 flex justify-center py-3 rounded-full hover:bg-zinc-800">
               View Github Repo
             </a>
             <a
               href={deployedUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-neutral-700 text-center text-white text-2xl font-semibold w-1/2 flex justify-center py-3 rounded-full hover:bg-zinc-800">
+              className="bg-neutral-800 text-center text-white text-xl md:text-2xl font-semibold w-1/2 flex justify-center py-3 rounded-full hover:bg-zinc-800">
               View Deployed Link
             </a>
           </div>
