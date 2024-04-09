@@ -70,7 +70,7 @@ function Home() {
           <div className="absolute inset-0 bg-[#161818] w-full h-full [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
         </div>
       </div>
-      <div className="flex flex-row gap-5 justify-center items-center">
+      <div className="flex md:mt-[20vh] flex-row gap-5 justify-center items-center">
         <div>
           <a href="https://github.com/KetanKumavat" target="_blank">
             <svg
