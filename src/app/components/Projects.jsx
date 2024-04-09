@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import {
   ApolloClient,
   InMemoryCache,
@@ -8,7 +8,10 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import Image from "next/image";
+import { motion, useAnimation } from "framer-motion";
 import { HoverEffect } from "./ui/card-hover-effect";
+import { HeroHighlight, Highlight } from "./ui/hero-highlight";
+
 function useStarredRepositories() {
   const [starredRepositories, setStarredRepositories] = useState([]);
 
@@ -151,16 +154,67 @@ function  Projects() {
     "./joke-gen.png",
   ];
 
+  const controls = useAnimation();
+  const textRef = useRef(null);
+
+ useEffect(() => {
+   const handleScroll = () => {
+     if (window.scrollY > 200) {
+       controls.start({ opacity: 1 });
+     } else {
+       controls.start({ opacity: 0 });
+     }
+   };
+
+   window.addEventListener("scroll", handleScroll);
+   return () => window.removeEventListener("scroll", handleScroll);
+ }, [controls]);
+
   return (
-    <HoverEffect
-      items={orderedRepositories.map((repo) => ({
-        title: repo.name,
-        description: repo.description || "Work in Progress...",
-        link: repo.url,
-        homepageUrl: repo.homepageUrl || "",
-        image: projectImages[orderedRepositories.indexOf(repo)],
-      }))}
-    />
+    <div>
+      <div className="w-full h-auto text-white flex-col">
+        <HeroHighlight>
+          <motion.h1
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            animate={{
+              opacity: 1,
+              y: [20, -5, 0],
+            }}
+            transition={{
+              duration: 0.5,
+              ease: [0.4, 0.0, 0.2, 1],
+            }}
+            className="text-4xl px-4 md:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto cursor-default">
+            turning ideas into real life products is{" "}
+            <Highlight className="text-white">my calling</Highlight>
+          </motion.h1>
+        </HeroHighlight>
+      </div>
+      <div className="w-full h-auto flex mt-24 font-bold">
+        <h1 className="text-white text-5xl flex justify-center w-full items-center">
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={controls}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="inline-block">
+            Explore My Projects
+          </motion.span>
+        </h1>
+      </div>
+      {/* project card */}
+      <HoverEffect
+        items={orderedRepositories.map((repo) => ({
+          title: repo.name,
+          description: repo.description || "Work in Progress...",
+          link: repo.url,
+          homepageUrl: repo.homepageUrl || "",
+          image: projectImages[orderedRepositories.indexOf(repo)],
+        }))}
+      />
+    </div>
 
     // <HoverEffect
     //   items={orderedRepositories.map((repo) => ({

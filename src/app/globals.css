@@ -26,6 +26,13 @@ body {
   /* opacity: 100; */
   cursor: default;
   background: transparent;
+  z-index: 100;
+}
+#linker{
+  z-index: 100;
+}
+#greet{
+  z-index: 100;
 }
 .wrapper {
   display: flex;
@@ -36,7 +43,7 @@ body {
   /* background-color: #101415; */
   /* padding: 0 1rem; */
   margin-top: 2vh;
-  /* border: solid #101415; */
+  border: solid 2px rgba(255, 255, 255, .5);
   position: sticky;
   top: 3vh;
   /* opacity: 0.8; */
@@ -58,6 +65,7 @@ label {
   /* width: 130px; */
   transition: ease linear 2s;
   /* opacity: 100; */
+  cursor: pointer; 
   opacity: 1;
 }
 label::before {
@@ -93,7 +101,7 @@ input:checked + label {
   /* background: transparent; */
   backdrop-filter: blur(11px);
   opacity: 1;
-  border: solid 0.2px rgba(255, 255, 255, .5);
+  /* border: solid 0.2px rgba(255, 255, 255, .5); */
   padding: 0.8rem 1.2rem;
   border-radius: 120vh;
   display: flex;
