@@ -1,6 +1,6 @@
-"use client";
 import { useEffect } from "react";
-import { motion, stagger, useAnimate } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { cn } from "../../../utils/cn";
 
 export const TextGenerateEffect = ({
@@ -10,42 +10,50 @@ export const TextGenerateEffect = ({
   words: string;
   className?: string;
 }) => {
-  const [scope, animate] = useAnimate();
+  const controls = useAnimation();
+  const { ref, inView } = useInView();
   let wordsArray = words.split(" ");
-  useEffect(() => {
-    animate(
-      "span",
-      {
-        opacity: 1,
-      },
-      {
-        duration: 2,
-        delay: stagger(0.2),
-      }
-    );
-  }, [scope.current]);
 
-  const renderWords = () => {
-    return (
-      <motion.div ref={scope}>
-        {wordsArray.map((word, idx) => {
-          return (
-            <motion.span
-              key={word + idx}
-              className="dark:text-white text-black opacity-0">
-              {word}{" "}
-            </motion.span>
-          );
-        })}
-      </motion.div>
-    );
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1, // Adjust staggerChildren value for desired delay between words
+      },
+    },
+  };
+
+  const wordVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
   };
 
   return (
-    <div className={cn("font-semibold", className)}>
+    <div className={cn("font-normal", className)}>
       <div className="mt-4">
-        <div className=" dark:text-white text-black text-4xl md:text-6xl leading-snug ">
-          {renderWords()}
+        <div
+          className="dark:text-white text-[20px] -mt-16 md:mt-0 md:text-3xl leading-snug"
+          ref={ref}
+          style={{ display: "flex", flexDirection: "column" }}>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={controls}>
+            {wordsArray.map((word, idx) => (
+              <motion.span
+                key={word + idx}
+                variants={wordVariants}
+                className="text-white/70 opacity-1">
+                {word}{" "}
+              </motion.span>
+            ))}
+          </motion.div>
         </div>
       </div>
     </div>

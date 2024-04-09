@@ -10,7 +10,7 @@
 body {
   scroll-behavior: smooth;
   background-color: #161818;
-    
+  overflow-x: hidden;
 }
 .sticky-container {
   height: 5rem;
