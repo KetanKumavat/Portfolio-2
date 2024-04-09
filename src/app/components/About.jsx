@@ -29,8 +29,8 @@ export default function AboutMe() {
  }, [controls]);
 
 return (
-  <div className="w-full mt-[28vh] md:mt-[20vh] flex h-screen flex-col items-center justify-center">
-    <div className="w-full flex font-bold">
+  <motion.div className="w-full mt-[28vh] md:mt-[20vh] flex h-screen flex-col items-center justify-center">
+    <motion.div className="w-full flex font-bold">
       <h1 className="text-white text-5xl flex justify-center w-full items-center mb-8 -mt-24 z-50">
         <motion.span
           initial={{ opacity: 0 }}
@@ -40,7 +40,7 @@ return (
           About Me
         </motion.span>
       </h1>
-    </div>
+    </motion.div>
     <div className="md:flex-col gap-0 md:ml-[1vh] md:items-center w-full p-0 m-auto ">
       <div className="md:ml-24 hidden md:flex md:-mt-24 w-full">
         <TextGenerateEffect
@@ -72,6 +72,6 @@ return (
     {/* skills */}
 
     <TechStack/>
-  </div>
+  </motion.div>
 );
 }
