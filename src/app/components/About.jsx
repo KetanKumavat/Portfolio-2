@@ -31,7 +31,7 @@ export default function AboutMe() {
 return (
   <motion.div className="w-full flex mt-[20em] h-fit flex-col items-center justify-center">
     <motion.div className="w-full flex font-bold">
-      <h1 className="text-white text-5xl flex justify-center w-full items-center mb-8 -mt-24 z-50">
+      <h1 className="text-white text-5xl flex justify-center w-full items-center z-50">
         <motion.span
           initial={{ opacity: 0 }}
           animate={controls}
