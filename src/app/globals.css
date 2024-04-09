@@ -35,6 +35,18 @@ body {
 #linker{
   z-index: 100;
 }
+#links{
+  z-index: 100;
+}
+#link1{
+  z-index: 100;
+}
+#link2{
+  z-index: 100;
+}
+#link3{
+  z-index: 100;
+}
 #greet{
   z-index: 100;
 }

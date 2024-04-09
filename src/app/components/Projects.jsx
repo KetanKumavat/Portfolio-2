@@ -172,7 +172,7 @@ function  Projects() {
 
   return (
     <div>
-      <div className="w-full h-auto text-white flex-col">
+      <div className="w-full h-fit text-white flex-col">
         <HeroHighlight>
           <motion.h1
             initial={{
@@ -193,13 +193,13 @@ function  Projects() {
           </motion.h1>
         </HeroHighlight>
       </div>
-      <div className="w-full h-auto flex mt-24 font-bold">
+      <div className="w-full h-fit flex font-bold">
         <h1 className="text-white md:text-5xl text-4xl flex justify-center w-full items-center">
           <motion.span
             initial={{ opacity: 0 }}
             animate={controls}
             transition={{ duration: 0.2, delay: 0 }}
-            className="inline-block">
+            className="inline-block mt-4">
             Explore My Projects
           </motion.span>
         </h1>
