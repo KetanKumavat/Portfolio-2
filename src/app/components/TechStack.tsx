@@ -27,12 +27,12 @@ const TechStack: FC<TechStackProps> = ({}) => {
             initial={{ opacity: 0 }}
             animate={controls}
             transition={{ duration: 0.2, delay: 0 }}
-            className="inline-block">
+            className="inline-block text-4xl">
             What I Know?
           </motion.span>
         </h1>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 text-white text-2xl ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 text-white text-2xl scale-90 md:scale-110">
         <TechCard
           title="Frontend"
           classaName="bg-neutral-700 text-white "

@@ -194,7 +194,7 @@ function  Projects() {
         </HeroHighlight>
       </div>
       <div className="w-full h-auto flex mt-24 font-bold">
-        <h1 className="text-white text-5xl flex justify-center w-full items-center">
+        <h1 className="text-white md:text-5xl text-4xl flex justify-center w-full items-center">
           <motion.span
             initial={{ opacity: 0 }}
             animate={controls}

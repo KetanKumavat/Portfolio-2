@@ -23,7 +23,7 @@ function Home() {
   // }, []);
 
   return (
-    <div className="flex flex-col w-full h-screen justify-center items-center z-0 bg-transparent">
+    <div className="flex mt-[18vh] mb-[5vh] flex-col w-full h-fit justify-center items-center z-0 bg-transparent">
       {/* <div className="flex flex-col justify-center items-center relative">
         <Image
           src={Ellipse}
@@ -38,7 +38,7 @@ function Home() {
           Full Stack Developer
         </h2>
       </div> */}
-      <div className="h-full w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
+      <div className="h-fit w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
         {/* <Image
           src={Ellipse}
           alt="ellipse"
@@ -47,17 +47,17 @@ function Home() {
         {/* <h1 className="md:text-8xl text-7xl bg-gradient-to-b from-white via-zinc-400 to-white/10 text-transparent bg-clip-text cursor-default lg:text-8xl flex justify-center items-center font-bold text-center relative -z-20">
           Ketan Kumavat
         </h1> */}
-        <h1 className="text-8xl text-white/80 text-center bg-clip-text font-bold cursor-default">
+        <h1 className="md:text-8xl text-7xl  text-white/80 text-center bg-clip-text font-bold cursor-default">
           Ketan Kumavat
         </h1>
-        <h2 className="text-3xl text-center text-white/85 md:leading-7 leading-9 cursor-default">
+        <h2 className="text-2xl md:text-4xl text-center text-white/70 md:leading-7 leading-9 cursor-default">
           Full Stack Developer
         </h2>
-        <div className="h-2"></div>
-        <div className="w-[40rem] h-40 relative">
+        <div className="h-4"></div>
+        <div className="w-[40rem] relative h-44">
           <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-white/45 to-transparent h-[2px] w-3/4 blur-sm" />
           <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent  to-transparent h-[5px] w-1/4 blur-sm" />
-          <div className="absolute inset-x-60 h-[3.2px] top-0 bg-gradient-to-r from-transparent via-white/90 to-transparent h-px w-1/4" />
+          <div className="absolute inset-x-60 h-[2.5px] top-0 bg-gradient-to-r from-transparent via-white/90 to-transparent w-1/4" />
           <SparklesCore
             background="transparent"
             minSize={1}
@@ -70,7 +70,7 @@ function Home() {
           <div className="absolute inset-0 bg-[#161818] w-full h-full [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
         </div>
       </div>
-      <div className="flex md:mb-32 lg:mb-32 mb-60 flex-row gap-5 justify-center items-center">
+      <div className="flex flex-row gap-5 justify-center items-center">
         <div>
           <a href="https://github.com/KetanKumavat" target="_blank">
             <svg

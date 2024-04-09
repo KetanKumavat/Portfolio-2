@@ -29,7 +29,7 @@ export default function AboutMe() {
  }, [controls]);
 
 return (
-  <motion.div className="w-full mt-[28vh] md:mt-[20vh] flex h-screen flex-col items-center justify-center">
+  <motion.div className="w-full flex mt-[20em] h-fit flex-col items-center justify-center">
     <motion.div className="w-full flex font-bold">
       <h1 className="text-white text-5xl flex justify-center w-full items-center mb-8 -mt-24 z-50">
         <motion.span
@@ -45,12 +45,12 @@ return (
       <div className="md:ml-24 hidden md:flex md:-mt-24 w-full">
         <TextGenerateEffect
           words={words}
-          className="text-white/35 w-full md:w-1/2 flex justify-center items-center text-center md:text-left"
+          className="text-white/35 px-16 w-full md:w-1/2 flex justify-center items-center text-center md:text-left"
         />
-        <Image src={Ketan} alt="Ketan" className="scale-50 flex md:scale-50" />
+        <Image src={Ketan} alt="Ketan" className="scale-50 rounded-[25px] flex md:scale-50" />
       </div>
-    <div className="hidden md:flex md:ml-20 -mt-60">
-        <h1 className="text-2xl md:text-2xl text-left text-white/80 font-normal">
+    <div className="hidden md:flex md:ml-36 -mt-60">
+        <h1 className="text-xl md:text-2xl text-left text-white/80 font-normal">
           <span className="font-bold px-2">Currently Learning: </span> DSA,
           Typescript
         </h1>
@@ -58,12 +58,12 @@ return (
     </div>
     {/* mobile view */}
     <div className="md:hidden flex-col w-full -mt-16">
-      <Image src={Ketan} alt="Ketan" className="scale-50 flex md:scale-50" />
+      <Image src={Ketan} alt="Ketan" className="scale-50 rounded-[25px] filter flex md:scale-50" />
       <TextGenerateEffect
         words={words}
         className="text-white/35 w-full flex justify-center items-center text-center md:text-right"
       />
-      <h1 className="flex text-2xl md:text-3xl text-left ml-2 text-white/80 font-normal mt-16">
+      <h1 className="text-2xl md:text-3xl text-left ml-2 text-white/80 font-normal mt-16">
         <span className="font-bold px-2">Currently Learning: </span> DSA,
         Typescript
       </h1>
