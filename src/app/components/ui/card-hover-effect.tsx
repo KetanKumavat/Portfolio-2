@@ -98,14 +98,14 @@ export const Card = ({
               target="_blank"
               rel="noopener noreferrer"
               className="bg-neutral-800 text-center text-white text-xl md:text-2xl font-semibold w-1/2 flex justify-center py-3 rounded-full hover:bg-zinc-800">
-              View Github Repo
+              View Repo
             </a>
             <a
               href={deployedUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-neutral-800 text-center text-white text-xl md:text-2xl font-semibold w-1/2 flex justify-center py-3 rounded-full hover:bg-zinc-800">
-              View Deployed Link
+              View Project
             </a>
           </div>
           {/* {children} */}
