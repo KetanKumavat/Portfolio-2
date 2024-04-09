@@ -41,37 +41,43 @@ return (
         </motion.span>
       </h1>
     </motion.div>
-    <div className="md:flex-col gap-0 md:ml-[1vh] md:items-center w-full p-0 m-auto ">
-      <div className="md:ml-24 hidden md:flex md:-mt-24 w-full">
-        <TextGenerateEffect
+    <div className="md:flex-col gap-0 md:items-center w-full p-0 m-auto ">
+      <div className=" hidden md:flex w-full">
+        <div className="flex">
+          <TextGenerateEffect
           words={words}
           className="text-white/35 px-16 w-full md:w-1/2 flex justify-center items-center text-center md:text-left"
         />
-        <Image src={Ketan} alt="Ketan" className="scale-50 rounded-[25px] flex md:scale-50" />
+        <Image
+          src={Ketan}
+          alt="Ketan"
+          className="scale-50 rounded-[25px] flex md:scale-50"
+        />
+        </div>
+        
       </div>
-    <div className="hidden md:flex md:ml-36 -mt-60">
-        <h1 className="text-xl md:text-2xl text-left text-white/80 font-normal">
-          <span className="font-bold px-2">Currently Learning: </span> DSA,
-          Typescript
-        </h1>
-      </div>
+      <h1 className="text-2xl hidden md:text-left md:block md:text-2xl ml-16 -mt-60 text-white/80 font-normal">
+      <span className="font-bold px-2 ">Currently Learning: </span> DSA, Typescript
+    </h1>
     </div>
+    
     {/* mobile view */}
-    <div className="md:hidden flex-col w-full -mt-16">
-      <Image src={Ketan} alt="Ketan" className="scale-50 rounded-[25px] filter flex md:scale-50" />
+    <div className="md:hidden flex-col w-4/5 h-fit">
+      <Image
+        src={Ketan}
+        alt="Ketan"
+        className="scale-50 rounded-[25px] filter flex md:scale-50"
+      />
       <TextGenerateEffect
         words={words}
         className="text-white/35 w-full flex justify-center items-center text-center md:text-right"
       />
-      <h1 className="text-2xl md:text-3xl text-left ml-2 text-white/80 font-normal mt-16">
-        <span className="font-bold px-2">Currently Learning: </span> DSA,
-        Typescript
-      </h1>
+      <h1 className="text-xl md:text-2xl text-center mt-12 md:mt-0 text-white/80 font-normal">
+      <span className="font-bold px-2 text-center">Currently Learning: </span> DSA, Typescript
+    </h1>
     </div>
-
     {/* skills */}
-
-    <TechStack/>
+    <TechStack />
   </motion.div>
 );
 }

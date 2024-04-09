@@ -1,6 +1,7 @@
-import { FC } from "react";
+import { FC,useEffect } from "react";
 import { cn } from "../../../utils/cn";
-import { motion } from "framer-motion";
+import { motion,useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 interface TechCardProps {
   title: string;
@@ -9,12 +10,23 @@ interface TechCardProps {
 }
 
 const TechCard: FC<TechCardProps> = ({ title, classaName, tech }) => {
+
+  const controls = useAnimation();
+  const { ref, inView } = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({ opacity: 1, scale: 0 });
+    }
+  }, [controls, inView]);
+
   return (
     <motion.div
+    ref={ref}
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.3 }}
-      className="w-full md:ml-[15rem] md:scale-100 scale-x-75">
+      className="w-full md:ml-[25vh] md:scale-100">
       <div className="flex-1 w-full flex flex-col gap-4 p-3 rounded-xl shadow-lg hover:shadow-xl cursor-pointer transform transition-all  border border-neutral-400 md:mb-16  justify-center">
         <div className="text-white font-semibold text-2xl tracking-wider">
           {title}
