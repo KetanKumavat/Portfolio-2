@@ -19,7 +19,7 @@ const TechStack: FC<TechStackProps> = ({}) => {
   return (
     <div
       ref={ref}
-      className="col-span-2 md:col-span-2 mt-96 h-auto lg:col-span-3 w-full">
+      className="col-span-1 md:col-span-2 mt-96 md:px-4 mb-8 h-auto lg:col-span-2 w-full">
       <div className="w-full h-fit flex font-bold">
         <h1 className="text-white text-5xl flex justify-center w-full items-center mb-8 -mt-24 z-50">
           <motion.span
@@ -35,7 +35,7 @@ const TechStack: FC<TechStackProps> = ({}) => {
         initial={{ opacity: 0 }}
         animate={controls}
         transition={{ duration: 0.5 }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 text-white text-2xl scale-90 md:scale-110">
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 text-white text-2xl scale-90 md:scale-100">
         <TechCard
           title="Frontend"
           classaName="bg-neutral-700 text-white "

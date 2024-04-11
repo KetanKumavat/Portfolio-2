@@ -26,8 +26,8 @@ const TechCard: FC<TechCardProps> = ({ title, classaName, tech }) => {
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.3 }}
-      className="w-full md:ml-[25vh] md:scale-100">
-      <div className="flex-1 w-full flex flex-col gap-4 p-3 rounded-xl shadow-lg hover:shadow-xl cursor-pointer transform transition-all  border border-neutral-400 md:mb-16  justify-center">
+      className="w-full">
+      <div className="flex-1 w-full flex flex-col gap-4 p-4 rounded-2xl shadow-neutral-700/80 shadow-lg hover:shadow-xl cursor-pointer transform transition-all  border bg-zinc-700/5 border-neutral-700/80 justify-center">
         <div className="text-white font-semibold text-2xl tracking-wider">
           {title}
         </div>
