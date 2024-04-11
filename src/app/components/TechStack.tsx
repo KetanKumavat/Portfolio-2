@@ -51,6 +51,11 @@ const TechStack: FC<TechStackProps> = ({}) => {
           classaName="bg-[#e0558a]"
           tech={["MongoDB", "SQL"]}
         />
+        <TechCard
+          title="Programming Languages"
+          classaName="bg-[#e0558a]"
+          tech={["C/C++", "Javascript", "Python"]}
+        />
       </motion.div>
     </div>
   );

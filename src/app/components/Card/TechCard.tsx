@@ -48,7 +48,9 @@ const TechCard: FC<TechCardProps> = ({ title, classaName, tech }) => {
                 item === "Firebase" && "border-2 border-orange-500/60",
                 item === "MySql" && "border-2 border-blue-500/60",
                 item === "MongoDB" && "border-2 border-emerald-500/60",
-                item === "SQL" && "border-2 border-blue-500/60"
+                item === "SQL" && "border-2 border-blue-500/60",
+                item === "C/C++" && "border-2 border-blue-500/60",
+                item === "Python" && "border-2 border-yellow-300/80",
               )}>
               {item}
             </div>

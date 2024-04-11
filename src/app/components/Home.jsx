@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import Ellipse from "../../../public/Ellipse 9.svg";
 import Image from "next/image";
 import { SparklesCore } from "./ui/Sparkles";
+import { motion } from "framer-motion";
+import { FiDownload } from "react-icons/fi";
 
 function Home() {
   // const [github, setGithub] = useState(null);
@@ -67,10 +69,25 @@ function Home() {
             particleColor="#FFFFFF"
           />
           {/* <div className="absolute flex justify-center items-center inset-0 w-full h-full rounded-full [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div> */}
-          <div className="absolute inset-0 bg-[#161818] w-full h-full [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
+          <div className="md:absolute md:flex hidden md:inset-0 md:bg-[#161818] md:md:w-full h-full md:[mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
         </div>
+        <div className="py-8 -mt-16">
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="focus:outline-none md:hidden">
+          {/* download resume button */}
+          <a href="/Resume_of_KetanKumavat.pdf" download="Ketan's Resume">
+            <div className="flex justify-center items-center gap-2 bg-neutral-500 font-semibold text-neutral-100 px-3 py-2 rounded-md cursor-pointer ">
+              <FiDownload size={20} />
+              <span>Download Resume</span>
+            </div>
+          </a>
+        </motion.button>
       </div>
-      <div className="flex md:mt-[20vh] flex-row gap-5 justify-center items-center">
+      </div>
+      
+      <div className="flex md:mt-[20vh] mb-2 flex-row gap-5 md:mr-0 ml-1 justify-center items-center">
         <div>
           <a href="https://github.com/KetanKumavat" target="_blank">
             <svg
@@ -168,7 +185,7 @@ function Home() {
           </a>
         </div>
         {/* <div>
-          <a href="https://www.codechef.com/users/ketank03" target="_blank">
+          <a href="https://www.codechef.com/users/ketan0311" target="_blank">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               x="0px"
