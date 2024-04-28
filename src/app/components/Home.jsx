@@ -77,7 +77,7 @@ function Home() {
           whileTap={{ scale: 0.9 }}
           className="focus:outline-none md:hidden">
           {/* download resume button */}
-          <a href="/Resume_of_KetanKumavat.pdf" download="Ketan's Resume">
+          <a href="/public/Resume_of_KetanKumavat(v1).pdf" download="Ketan's Resume">
             <div className="flex justify-center items-center gap-2 bg-neutral-500 font-semibold text-neutral-100 px-3 py-2 rounded-md cursor-pointer ">
               <FiDownload size={20} />
               <span>Download Resume</span>
@@ -153,7 +153,7 @@ function Home() {
           </a>
         </div>
         <div>
-          <a href="https://leetcode.com/Ketan_Kumavat" target="_blank">
+          <a href="https://leetcode.com/KetanKumavat" target="_blank">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               x="0px"
