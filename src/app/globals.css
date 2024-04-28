@@ -50,6 +50,9 @@ body {
 #greet{
   z-index: 100;
 }
+#downloadResume{
+  z-index: 100;
+}
 .wrapper {
   display: flex;
   justify-content: center;

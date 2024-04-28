@@ -71,13 +71,12 @@ function Home() {
           {/* <div className="absolute flex justify-center items-center inset-0 w-full h-full rounded-full [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div> */}
           <div className="md:absolute md:flex hidden md:inset-0 md:bg-[#161818] md:md:w-full h-full md:[mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
         </div>
-        <div className="py-8 -mt-16">
+        <div className="py-8 -mt-16" id="downloadResume">
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           className="focus:outline-none md:hidden">
-          {/* download resume button */}
-          <a href="/public/Resume_of_KetanKumavat(v1).pdf" download="Ketan's Resume">
+          <a href="/Resume_of_KetanKumavat(v1).pdf" download="Ketan's Resume">
             <div className="flex justify-center items-center gap-2 bg-neutral-500 font-semibold text-neutral-100 px-3 py-2 rounded-md cursor-pointer ">
               <FiDownload size={20} />
               <span>Download Resume</span>
