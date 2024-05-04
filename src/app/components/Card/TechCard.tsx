@@ -1,6 +1,6 @@
-import { FC,useEffect } from "react";
+import { FC, useEffect } from "react";
 import { cn } from "../../../utils/cn";
-import { motion,useAnimation } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 interface TechCardProps {
@@ -10,7 +10,6 @@ interface TechCardProps {
 }
 
 const TechCard: FC<TechCardProps> = ({ title, classaName, tech }) => {
-
   const controls = useAnimation();
   const { ref, inView } = useInView();
 
@@ -22,7 +21,7 @@ const TechCard: FC<TechCardProps> = ({ title, classaName, tech }) => {
 
   return (
     <motion.div
-    ref={ref}
+      ref={ref}
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.3 }}
@@ -50,7 +49,7 @@ const TechCard: FC<TechCardProps> = ({ title, classaName, tech }) => {
                 item === "MongoDB" && "border-2 border-emerald-500/60",
                 item === "SQL" && "border-2 border-blue-500/60",
                 item === "C/C++" && "border-2 border-blue-500/60",
-                item === "Python" && "border-2 border-yellow-300/80",
+                item === "Python" && "border-2 border-yellow-300/80"
               )}>
               {item}
             </div>

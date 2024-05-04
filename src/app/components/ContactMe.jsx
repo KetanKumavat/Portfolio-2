@@ -1,0 +1,70 @@
+"use client";
+import React from "react";
+import { useState } from "react";
+
+export default function Form() {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [clicked, setClicked] = useState("");
+
+  return (
+    <div className="w-full flex flex-col justify-center items-center mt-10 mb-10">
+      <h1 className="text-3xl flex flex-col justify-center items-center text-white font-bold">
+        Get In Touch!
+      </h1>
+      <div
+        id="form"
+        className="w-3/4 md:w-1/2 bg-[rgba(255,255,255,0.070)] md:p-20 p-4 z-50 backdrop-blur-8xl mt-10 rounded-2xl transform scale-105 md:scale-100 md:border-none border h-fit md:h-fit  max-h-fit justify-center">
+        <form className=" flex flex-col justify-center items-center w-full ">
+          <h2 className="text-2xl text-white font-semibold">Contact me</h2>
+          <div className=" flex w-full flex-col">
+            <label
+              htmlFor="name"
+              className="block text-xl font-medium text-left text-white">
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              required
+              className="text-lg font-semibold rounded-lg  block w-full p-2.5  bg-zinc-200 border-gray-600 placeholder-black text-black"
+              placeholder="Your Name.."
+            />
+          </div>
+          <div className=" flex w-full flex-col">
+            <label
+              htmlFor="email"
+              className="block text-xl font-medium text-left text-white">
+              Your Email
+            </label>
+            <input
+              type="text"
+              id="email"
+              required
+              className=" text-lg font-semibold rounded-lg  block w-full p-2.5  bg-zinc-200 border-gray-600 placeholder-black text-black"
+              placeholder="Your Email.."
+            />
+          </div>
+          <div className=" flex w-full flex-col">
+            <label
+              htmlFor="message"
+              className="block text-left text-lg font-medium  text-white">
+              Your message
+            </label>
+            <textarea
+              id="message"
+              rows="4"
+              required
+              className=" text-lg font-semibold rounded-lg  block w-full p-2.5  bg-zinc-200 border-gray-600 placeholder-black text-black"
+              placeholder="Leave a comment..."></textarea>
+          </div>
+          <div className="p-5">
+            <button className="px-8 rounded-lg border-2 scale-110 border-neutral-100 text-black text-md font-bold bg-white hover:bg-transparent hover:text-white transition duration-200 text-xl focus-visible:font-white focus-visible:font-bold focus-visible:bg-transparent focus-visible:border-2-white focus-visible:text-white focus-visible:rounded-xl">
+              Send
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
