@@ -14,7 +14,7 @@ export async function POST(req, res) {
         pass: process.env.NEXT_PUBLIC_PASSWORD,
       },
     });
-    // console.log(name, email, message);
+    console.log(name, email, message);
     let info = await transporter.sendMail({
       from: {
         name: name,
@@ -25,10 +25,10 @@ export async function POST(req, res) {
       text: message,
       html: `<html>
               <body>
-                <h2>Sender Name: ${name}</h2>
-                <h2>Sender Email: ${email}</h2>
+                <h3>Sender Name: ${name}</h3>
+                <h3>Sender Email: ${email}</h3>
+                </br>
                 <p>${message}</p>
-                <br />
               </body>
             </html>`,
     });

@@ -81,7 +81,6 @@ export default function Form() {
             <input
               type="text"
               id="name"
-              required
               value={name}
               className="text-lg font-semibold rounded-lg  block w-full p-2.5  bg-zinc-200 border-gray-600 placeholder-black text-black cursor-auto"
               placeholder="Your Name.."
@@ -95,9 +94,8 @@ export default function Form() {
               Your Email
             </label>
             <input
-              type="text"
+              type="email"
               id="email"
-              required
               value={email}
               className=" text-lg font-semibold rounded-lg  block w-full p-2.5  bg-zinc-200 border-gray-600 placeholder-black text-black cursor-auto"
               placeholder="Your Email.."
@@ -113,7 +111,6 @@ export default function Form() {
             <textarea
               id="message"
               rows="4"
-              required
               value={message}
               className=" text-lg font-semibold rounded-lg  block w-full p-2.5  bg-zinc-200 border-gray-600 placeholder-black text-black cursor-auto"
               placeholder="Leave a comment..."
