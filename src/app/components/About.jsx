@@ -6,8 +6,7 @@ import Image from "next/image";
 import Ketan from "../../../public/ketan1.jpg";
 import { motion, useAnimation } from "framer-motion";
 import TechStack from "./TechStack.tsx";
-import ContactMe from "./ContactMe";
-const words = `I am a passionate full-stack developer based in India, currently in my 2nd year of engineering. I've crafted several projects and am deeply engrossed in learning data structures and algorithms, dedicating myself to regular practice on LeetCode. Currently seeking enriching internship opportunities to further enhance my skills and contribute to meaningful projects.`;
+const words = `I am a passionate full-stack developer based in India, currently in my 2nd year of engineering. I've crafted several projects and am deeply engrossed in learning data structures and algorithms. Currently seeking enriching internship opportunities to further enhance my skills and contribute to meaningful projects.`;
 
 export default function AboutMe() {
   const controls = useAnimation();
