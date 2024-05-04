@@ -41,8 +41,7 @@ export default function Form() {
         throw new Error(emailResponse.error);
       }
     } catch (error) {
-      
-      console.log("Error Sending Email", error);
+      console.log(error);
       toast.error("Error sending email. Please try again.", {
         position: "bottom-right",
       });

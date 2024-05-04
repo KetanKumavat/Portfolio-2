@@ -37,6 +37,6 @@ export async function POST(req, res) {
     });
   } catch (error) {
     console.log(error);
-    return NextResponse.json({ error: "Error sending email" });
+    return NextResponse.json({ error: this.error });
   }
 }
