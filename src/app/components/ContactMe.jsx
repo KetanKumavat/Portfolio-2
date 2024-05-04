@@ -41,7 +41,7 @@ export default function Form() {
         throw new Error(emailResponse.error);
       }
     } catch (error) {
-      console.log(error);
+      console.log("Error Sending Email", error);
       toast.error("Error sending email. Please try again.", {
         position: "bottom-right",
       });
@@ -49,7 +49,7 @@ export default function Form() {
   }
 
   return (
-    <div className="w-full flex flex-col justify-center items-center mt-24 md:mt-40 mb-10">
+    <div className="w-full flex flex-col justify-center items-center mt-24 md:mt-32 mb-10">
       <ToastContainer
         position="bottom-right"
         autoClose={2000}

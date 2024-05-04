@@ -20,7 +20,7 @@ const TechStack: FC<TechStackProps> = ({}) => {
     <div
       ref={ref}
       className="col-span-1 md:col-span-2 mt-96 md:px-4 mb-8 h-auto lg:col-span-2 w-full">
-      <div className="w-full h-fit flex font-bold">
+      <div className="w-full h-fit flex font-bold justify-center items-center">
         <h1 className="text-white text-5xl flex justify-center w-full items-center mb-8 -mt-24 z-50">
           <motion.span
             initial={{ opacity: 0 }}
@@ -31,32 +31,43 @@ const TechStack: FC<TechStackProps> = ({}) => {
           </motion.span>
         </h1>
       </div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={controls}
-        transition={{ duration: 0.5 }}
-        className="grid grid-cols-1 md:ml-[25vh] md:grid-cols-2 md:w-3/4 lg:w-3/4 w-full lg:grid-cols-2 gap-14 text-white text-2xl scale-90 md:scale-100">
-        <TechCard
-          title="Frontend"
-          classaName="bg-neutral-700 text-white "
-          tech={["HTML", "CSS", "Tailwind", "Javascript", "ReactJs", "NextJs"]}
-        />
-        <TechCard
-          title="Backend"
-          classaName="bg-[#f37c36]"
-          tech={["NodeJs", "ExpressJs", "Firebase"]}
-        />
-        <TechCard
-          title="Database"
-          classaName="bg-[#e0558a]"
-          tech={["MongoDB", "SQL"]}
-        />
-        <TechCard
-          title="Programming Languages"
-          classaName="bg-[#e0558a]"
-          tech={["C/C++", "Javascript", "Python"]}
-        />
-      </motion.div>
+      <div
+        ref={ref}
+        className="flex justify-center items-center col-span-1 mt-10 md:col-span-2 md:px-4 mb-8 h-auto lg:col-span-2 w-full">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={controls}
+          transition={{ duration: 0.5 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:w-3/4 w-full lg:grid-cols-2 gap-14 text-white text-2xl scale-90 md:scale-100">
+          <TechCard
+            title="Frontend"
+            classaName="bg-neutral-700 text-white "
+            tech={[
+              "HTML",
+              "CSS",
+              "Tailwind",
+              "Javascript",
+              "ReactJs",
+              "NextJs",
+            ]}
+          />
+          <TechCard
+            title="Backend"
+            classaName="bg-[#f37c36]"
+            tech={["NodeJs", "ExpressJs", "Firebase"]}
+          />
+          <TechCard
+            title="Database"
+            classaName="bg-[#e0558a]"
+            tech={["MongoDB", "SQL"]}
+          />
+          <TechCard
+            title="Programming Languages"
+            classaName="bg-[#e0558a]"
+            tech={["C/C++", "Javascript", "Python"]}
+          />
+        </motion.div>
+      </div>
     </div>
   );
 };
