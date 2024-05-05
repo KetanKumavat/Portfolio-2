@@ -21,10 +21,9 @@ export default function AboutMe() {
   const [imageIndex, setImageIndex] = useState(0);
 
   useEffect(() => {
-    const time = Math.random() * 2000 + 2000;
     const interval = setInterval(() => {
       setImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, time);
+    }, 1500);
 
     return () => clearInterval(interval);
   }, []);
@@ -66,7 +65,7 @@ export default function AboutMe() {
               <img
                 src={images[imageIndex]}
                 alt="Ketan"
-                className="object-cover rounded-[25px] flex md:scale-95"
+                className="object-cover rounded-[25px] shadow-2xl overflow-hidden shadow-stone-600  flex md:scale-95"
               />
             </div>
           </div>
@@ -84,7 +83,7 @@ export default function AboutMe() {
             <img
               src={images[imageIndex]}
               alt="Ketan"
-              className="object-cover flex justify-center items-center ml-3 aspect-square w-full rounded-[25px] scale-75"
+              className="object-cover flex justify-center shadow-2xl overflow-hidden shadow-stone-600 items-center ml-3 aspect-square w-full rounded-[25px] scale-75"
             />
           </div>
         </div>

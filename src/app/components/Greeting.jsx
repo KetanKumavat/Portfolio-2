@@ -49,7 +49,7 @@ function Greeting() {
       <img
         src="/ketan5.jpeg"
         alt="Ketan"
-        className="scale-50 md:hidden w-36 mt-[-10vh] aspect-square rounded-full object-cover"
+        className="scale-75  ml-1 -mx-4 md:hidden w-28 -mt-20 aspect-square rounded-full object-cover"
       />
     </div>
   );
