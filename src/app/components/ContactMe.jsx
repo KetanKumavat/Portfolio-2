@@ -76,7 +76,7 @@ export default function Form() {
         pauseOnHover
         theme="light"
       />
-      <div className="w-full h-fit flex font-bold justify-center items-center">
+      <div className="w-full h-fit flex font-bold justify-center items-center mb-16">
         <h1 className="text-white text-5xl flex justify-center w-full items-center">
           <motion.span
             initial={{ opacity: 0 }}
@@ -87,9 +87,12 @@ export default function Form() {
           </motion.span>
         </h1>
       </div>
+      <h1 className="text-white/65 mt-10 text-center text-3xl flex justify-center w-full items-center mb-10 md:mb-0">
+        Currently Looking for Internship and Job Opportunities.{" "}
+      </h1>
       <div
         id="form"
-        className="w-3/4 md:w-1/2 bg-[rgba(255,255,255,0.070)] md:p-12 p-4 z-50 backdrop-blur-8xl mt-20 rounded-2xl transform scale-105 md:scale-100 md:border-none border h-fit md:h-fit  max-h-fit justify-center">
+        className="w-3/4 md:w-1/2 bg-[rgba(255,255,255,0.070)] md:p-12 p-4 z-50 backdrop-blur-8xl mt-12 rounded-2xl transform scale-105 md:scale-100 md:border-none border h-fit md:h-fit  max-h-fit justify-center">
         <form
           className=" flex flex-col justify-center items-center w-full "
           onSubmit={sendEmail}>

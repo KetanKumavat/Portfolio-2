@@ -12,7 +12,7 @@ function Linker() {
       className="md:flex md:justify-end mr-16 z-50 md:sticky md:top-28"
       id="linker">
       <button
-        className="justify-end md:hidden hidden fixed -mt-16 top-32 ml-[38vh]" //CHANGE HIDDEN TO FLEX FOR MOBILE THING
+        className="justify-end md:hidden hidden fixed -mt-16 top-28 ml-[38vh]" //CHANGE HIDDEN TO FLEX FOR MOBILE THING
         onClick={toggleAccordion}
         id="links">
         <h1 className="text-white text-light text-xl">Links</h1>

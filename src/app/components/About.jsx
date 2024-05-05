@@ -60,7 +60,7 @@ export default function AboutMe() {
           <div className="flex">
             <TextGenerateEffect
               words={words}
-              className="text-white/35 px-16 w-full md:w-1/2 flex justify-center items-center text-center md:text-left"
+              className="text-white/35 px-16 w-full md:w-1/2 flex justify-center items-center text-justify md:text-left"
             />
             <div className="flex ml-[25vh] w-[55vh] aspect-square justify-center">
               <img
@@ -84,13 +84,13 @@ export default function AboutMe() {
             <img
               src={images[imageIndex]}
               alt="Ketan"
-              className="object-cover aspect-square w-full rounded-[80px] p-10"
+              className="object-cover flex justify-center items-center ml-3 aspect-square w-full rounded-[25px] scale-75"
             />
           </div>
         </div>
         <TextGenerateEffect
           words={words}
-          className="text-white/35 w-full px-7 mt-14 flex justify-center items-center text-center md:text-right"
+          className="text-white/65 w-full px-7 mt-14 flex justify-center items-center text-center md:text-right"
         />
         <h1 className="text-xl md:text-2xl text-center mt-12 md:mt-0 text-white/80 font-normal">
           <span className="font-bold px-2 py-8 text-center">
