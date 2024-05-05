@@ -127,7 +127,7 @@ export default function Form() {
           <div className=" flex w-full flex-col">
             <label
               htmlFor="message"
-              className="block ml-[-2.8vh] text-left text-lg font-medium  text-white">
+              className="block ml-[-2.8vh] text-left text-xl font-medium  text-white">
               Your message
             </label>
             <textarea

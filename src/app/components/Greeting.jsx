@@ -2,22 +2,55 @@
 import React from "react";
 
 function Greeting() {
-  const [timeOfDay, setTimeOfDay] = React.useState("");
+  const [greeting, setGreeting] = React.useState("");
+  const [fade, setFade] = React.useState(false);
 
   React.useEffect(() => {
     const currentTime = new Date().getHours();
     if (currentTime >= 5 && currentTime < 12) {
-      setTimeOfDay("Good Morning");
+      setGreeting("Good Morning.");
     } else if (currentTime >= 12 && currentTime < 18) {
-      setTimeOfDay("Good Afternoon");
+      setGreeting("Good Afternoon.");
     } else {
-      setTimeOfDay("Good Evening");
+      setGreeting("Good Evening.");
     }
+
+    const timer = setTimeout(() => {
+      setFade(true);
+      setTimeout(() => {
+        setGreeting("Ketan.");
+        setTimeout(() => {
+          setFade(false);
+        }, 2000);
+      }, 2000);
+    }, 3000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className="hidden md:flex justify-start ml-9 -mt-16 top-12 w-2 md:w-fit scale-90 md:scale-100" id="greet">
-      <h1 className="text-white font-medium text-2xl">{timeOfDay}.</h1>
+    <div>
+      <div
+        className={`flex items-center justify-start md:ml-9 ml-5 sticky top-28 w-full md:scale-100 transition-opacity duration-2000 ${
+          fade ? "opacity-0" : "opacity-100"
+        }`}
+        id="greet">
+        {greeting === "Ketan." && (
+          <img
+            src="/ketan1.jpg"
+            alt="Ketan"
+            className="scale-50 hidden md:flex w-36 md:mt-[-9vh] aspect-square rounded-full object-cover"
+          />
+        )}
+        <h1 className="text-white hidden md:flex font-medium text-3xl -mt-16 md:mt-[-9vh]">
+          {greeting}
+        </h1>
+      </div>
+      <img
+        src="/ketan5.jpeg"
+        alt="Ketan"
+        className="scale-50 md:hidden w-36 mt-[-10vh] aspect-square rounded-full object-cover"
+      />
     </div>
   );
 }

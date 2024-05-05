@@ -24,7 +24,7 @@ export const TextGenerateEffect = ({
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.1, // Adjust staggerChildren value for desired delay between words
+        staggerChildren: 0.1,
       },
     },
   };
@@ -36,7 +36,7 @@ export const TextGenerateEffect = ({
 
   return (
     <div className={cn("font-normal", className)}>
-      <div className="mt-4">
+      <div className="mt-8">
         <div
           className="dark:text-white text-[20px] -mt-16 md:mt-0 md:text-3xl leading-snug"
           ref={ref}
