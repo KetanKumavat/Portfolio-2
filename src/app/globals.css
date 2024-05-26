@@ -15,18 +15,45 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 .sticky-container {
   height: 5rem;
   z-index: 100;
 }
+.bggrad1 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  top: 30%;
+  left: 30.7%;
+  background: linear-gradient(180deg, #b7b9b593, #4f4b4bdd, #161616c2);
+  box-shadow: 0px 6px 3.9px 0px rgba(255, 255, 255, 0.53) inset;
+  opacity: 0.9;
+  cursor: pointer;
+}
 
+@media (max-width: 670px) {
+  .bggrad1 {
+    height: 85px;
+    width: 85px;
+    top: 28.5%;
+    left: 33.2%;
+  }
+}
+
+@media (max-width: 410px) {
+  .bggrad1 {
+    top: -10%;
+  }
+}
 .nav {
   display: flex;
   justify-content: center;
   width: 100%;
   position: sticky;
-  top: 1vh;
+  top: 2vh;
   /* opacity: 100; */
   cursor: default;
   background: transparent;
@@ -142,29 +169,4 @@ label:nth-of-type(1)::before {
 }
 label:nth-of-type(2)::before {
   transform-origin: left;
-}
-
-#cards:before {
-  content: "";
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: white;
-  z-index: -1;
-}
-#cards:after {
-  content: "";
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: white;
-  z-index: -2;
-  filter: blur(40px);
-}
-
-#cards:before,
-#cards:after {
-  background: linear-gradient(235deg, #89ff00, #060c21, #00bcd4);
 }

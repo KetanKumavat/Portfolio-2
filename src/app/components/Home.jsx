@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Ellipse from "../../../public/Ellipse 9.svg";
 import Image from "next/image";
 import { SparklesCore } from "./ui/Sparkles";
@@ -23,23 +23,19 @@ function Home() {
   //   };
   //   fetchData();
   // }, []);
+  const constraintsRef = useRef(null);
 
   return (
-    <div className="flex mt-[18vh] mb-[5vh] flex-col w-full h-fit justify-center items-center z-0 bg-transparent">
-      {/* <div className="flex flex-col justify-center items-center relative">
+    <motion.div
+      className="flex mt-[18vh] flex-col w-full h-fit justify-center items-center z-0 bg-transparent"
+      ref={constraintsRef}>
+      <div className="flex flex-col justify-center items-center">
         <Image
           src={Ellipse}
           alt="ellipse"
-          className="absolute -mt-44 pointer-events-none "
+          className="absolute top-[45vh] scale-110 md:hidden pointer-events-none "
         />
-        <h1 className="text-8xl bg-gradient-to-b from-white via-zinc-500 to-white/10 text-transparent bg-clip-text font-bold cursor-default">
-          Ketan Kumavat
-        </h1>
-        <div className="h-2"></div>
-        <h2 className="text-3xl text-white opacity-55 cursor-default">
-          Full Stack Developer
-        </h2>
-      </div> */}
+      </div>
       <div className="h-fit w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
         {/* <Image
           src={Ellipse}
@@ -49,7 +45,7 @@ function Home() {
         {/* <h1 className="md:text-8xl text-7xl bg-gradient-to-b from-white via-zinc-400 to-white/10 text-transparent bg-clip-text cursor-default lg:text-8xl flex justify-center items-center font-bold text-center relative -z-20">
           Ketan Kumavat
         </h1> */}
-        <h1 className="md:text-8xl text-7xl  text-white/80 text-center bg-clip-text font-bold cursor-default">
+        <h1 className="md:text-8xl text-7xl  text-white/80 text-center mt-2 bg-clip-text font-bold cursor-default">
           Ketan Kumavat
         </h1>
         <h2 className="text-2xl md:text-4xl text-center text-white/70 md:leading-7 leading-9 cursor-default">
@@ -72,21 +68,33 @@ function Home() {
           <div className="md:absolute md:flex hidden md:inset-0 md:bg-[#161818] md:md:w-full h-full md:[mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
         </div>
         <div className="py-8 -mt-16" id="downloadResume">
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="focus:outline-none md:hidden">
-          <a href="/Resume_of_KetanKumavat(v2).pdf" download="Ketan's Resume">
-            <div className="flex justify-center items-center gap-2 bg-neutral-500 font-semibold text-neutral-100 px-3 py-2 rounded-md cursor-pointer ">
-              <FiDownload size={20} />
-              <span>Download Resume</span>
-            </div>
-          </a>
-        </motion.button>
+          <motion.div
+            drag
+            dragConstraints={constraintsRef}
+            animate={{
+              scale: [1, 1.3, 1, 1.3, 1],
+            }}
+            transition={{
+              duration: 9,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="bggrad1"></motion.div>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="focus:outline-none md:hidden">
+            <a href="/Resume_of_KetanKumavat(v2).pdf" download="Ketan's Resume">
+              <div className="flex justify-center items-center gap-2 bg-neutral-500 font-semibold text-neutral-100 px-3 py-2 rounded-md cursor-pointer ">
+                <FiDownload size={20} />
+                <span>Download Resume</span>
+              </div>
+            </a>
+          </motion.button>
+        </div>
       </div>
-      </div>
-      
-      <div className="flex md:mt-[20vh] mb-2 flex-row gap-5 md:mr-0 ml-1 justify-center items-center">
+
+      <div className="flex md:mt-[20vh] mb-2 flex-row gap-5 md:mr-0 justify-center items-center">
         <div>
           <a href="https://github.com/KetanKumavat" target="_blank">
             <svg
@@ -215,7 +223,7 @@ function Home() {
           </a>
         </div> */}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

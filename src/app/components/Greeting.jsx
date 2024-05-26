@@ -29,7 +29,7 @@ function Greeting() {
   }, []);
 
   return (
-    <div className="sticky top-28 z-50">
+    <div className="sticky md:top-28 top-28 z-50">
       <div
         className={`flex items-center justify-start md:ml-9 ml-5 w-full md:scale-100 transition-opacity duration-1000 ${
           fade ? "opacity-0" : "opacity-100"
@@ -39,17 +39,17 @@ function Greeting() {
           <img
             src="/ketan1.jpg"
             alt="Ketan"
-            className="scale-50 -px-4 hidden md:flex w-28 md:mt-[-10vh] -ml-5 aspect-square rounded-full object-cover"
+            className="hidden md:flex w-[4.5rem] md:mt-[-11vh] aspect-square rounded-full object-cover"
           />
         )}
-        <h1 className="text-white hidden md:flex font-medium text-3xl -mt-16 md:mt-[-10vh]">
+        <h1 className="text-white hidden md:flex ml-4 font-medium text-3xl -mt-16 md:mt-[-10vh]">
           {greeting}
         </h1>
       </div>
       <img
         src="/ketan5.jpeg"
         alt="Ketan"
-        className="scale-75  ml-1 -mx-4 md:hidden w-28 -mt-20 aspect-square rounded-full object-cover"
+        className="scale-75 md:hidden w-28 -mt-[7.2vh] aspect-square rounded-full object-cover"
       />
     </div>
   );

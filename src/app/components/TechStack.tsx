@@ -38,7 +38,7 @@ const TechStack: FC<TechStackProps> = ({}) => {
           initial={{ opacity: 0 }}
           animate={controls}
           transition={{ duration: 0.5 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:w-3/4 w-full lg:grid-cols-2 gap-14 text-white text-2xl scale-90 md:scale-100">
+          className="grid grid-cols-1 md:grid-cols-2 lg:w-3/4 w-full lg:grid-cols-2 gap-12 text-white text-2xl scale-95 md:scale-100">
           <TechCard
             title="Frontend"
             classaName="bg-neutral-700 text-white "

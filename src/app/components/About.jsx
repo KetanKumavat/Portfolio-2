@@ -43,7 +43,7 @@ export default function AboutMe() {
 
   return (
     <motion.div className="w-full flex mt-[20em] h-fit flex-col items-center justify-center">
-      <motion.div className="w-full flex font-bold">
+      <motion.div className="w-fit flex font-bold">
         <h1 className="text-white text-5xl flex justify-center w-full items-center z-50">
           <motion.span
             initial={{ opacity: 0 }}
@@ -54,45 +54,47 @@ export default function AboutMe() {
           </motion.span>
         </h1>
       </motion.div>
-      <div className="md:flex-col gap-0 md:items-center w-full p-0 m-auto mt-24">
-        <div className=" hidden md:flex w-full">
-          <div className="flex">
+      <div className="md:flex-col gap-0 md:items-center w-full mt-24">
+        <div className=" hidden md:flex justify-center px-12 w-full">
+          <div className="flex flex-col gap-10">
             <TextGenerateEffect
               words={words}
               className="text-white/35 px-16 w-full md:w-1/2 flex justify-center items-center text-justify md:text-left"
             />
-            <div className="flex ml-[25vh] w-[55vh] aspect-square justify-center">
-              <img
-                src={images[imageIndex]}
-                alt="Ketan"
-                className="object-cover rounded-[25px] shadow-2xl overflow-hidden shadow-stone-600  flex md:scale-95"
-              />
+            <div>
+              <h1 className="text-2xl hidden md:text-left md:block md:text-2xl ml-16 text-white/80 font-normal">
+                <span className="font-bold px-2 ">Currently Learning: </span>{" "}
+                DSA, Typescript
+              </h1>
             </div>
           </div>
+          <div className="flex w-full aspect-square justify-center">
+            <img
+              src={images[imageIndex]}
+              alt="Ketan"
+              className="object-cover rounded-[25px] shadow-xl overflow-hidden shadow-neutral-800 flex"
+            />
+          </div>
         </div>
-        <h1 className="text-2xl hidden md:text-left md:block md:text-2xl ml-16 text-white/80 font-normal">
-          <span className="font-bold px-2 ">Currently Learning: </span> DSA,
-          Typescript
-        </h1>
       </div>
 
       {/* mobile view */}
       <div className="md:hidden flex-col justify-center items-center">
-        <div className="flex scale-90 mx-auto w-[50vh] aspect-square justify-center items-center">
+        <div className="flex aspect-square justify-center items-center">
           <div className="flex justify-center items-center">
             <img
               src={images[imageIndex]}
               alt="Ketan"
-              className="object-cover flex justify-center shadow-2xl overflow-hidden shadow-stone-600 items-center ml-3 aspect-square w-full rounded-[25px] scale-75"
+              className="object-cover scale-75 flex justify-center shadow-xl overflow-hidden shadow-neutral-700 items-center aspect-square w-full rounded-[25px] scale-75"
             />
           </div>
         </div>
         <TextGenerateEffect
           words={words}
-          className="text-white/65 w-full px-7 mt-14 flex justify-center items-center text-center md:text-right"
+          className="text-white/65 w-full px-5 mt-14 flex justify-center items-center text-center md:text-right"
         />
-        <h1 className="text-xl md:text-2xl text-center mt-12 md:mt-0 text-white/80 font-normal">
-          <span className="font-bold px-2 py-8 text-center">
+        <h1 className="text-xl md:text-2xl text-center mt-12 md:mt-5 text-white/80 font-normal">
+          <span className="font-bold py-8 text-center">
             Currently Learning:{" "}
           </span>{" "}
           DSA, Typescript
