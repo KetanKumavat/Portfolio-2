@@ -33,7 +33,7 @@ function Home() {
         <Image
           src={Ellipse}
           alt="ellipse"
-          className="absolute top-[45vh] scale-110 md:hidden pointer-events-none "
+          className="absolute opacity-85 top-[45vh] scale-110 md:hidden pointer-events-none "
         />
       </div>
       <div className="h-fit w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
@@ -45,7 +45,7 @@ function Home() {
         {/* <h1 className="md:text-8xl text-7xl bg-gradient-to-b from-white via-zinc-400 to-white/10 text-transparent bg-clip-text cursor-default lg:text-8xl flex justify-center items-center font-bold text-center relative -z-20">
           Ketan Kumavat
         </h1> */}
-        <h1 className="md:text-8xl text-7xl  text-white/80 text-center mt-2 bg-clip-text font-bold cursor-default">
+        <h1 className="md:text-8xl text-7xl  text-white/80 text-center bg-clip-text font-bold cursor-default">
           Ketan Kumavat
         </h1>
         <h2 className="text-2xl md:text-4xl text-center text-white/70 md:leading-7 leading-9 cursor-default">
@@ -94,7 +94,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="flex md:mt-[20vh] mb-2 flex-row gap-5 md:mr-0 justify-center items-center">
+      <div className="flex md:mt-[20vh] mt-0 flex-row gap-5 md:mr-0 mr-0 justify-center items-center">
         <div>
           <a href="https://github.com/KetanKumavat" target="_blank">
             <svg

@@ -94,10 +94,9 @@ function extractImageUrls(text) {
   return matches;
 }
 
-
-function  Projects() {
+function Projects() {
   const starredRepositories = useStarredRepositories();
-   const [readmeImages, setReadmeImages] = useState([]);
+  const [readmeImages, setReadmeImages] = useState([]);
 
   useEffect(() => {
     const fetchReadmeImages = async () => {
@@ -117,8 +116,6 @@ function  Projects() {
   }, [starredRepositories]);
 
   const orderedRepositories = [
-    // Add your desired repo(s) here first
-    // For example, to display a repo with name "my-repo" first:
     ...starredRepositories.filter((repo) => repo.name === "Insightify"),
     ...starredRepositories.filter((repo) => repo.name === "CoinCanvas"),
     ...starredRepositories.filter((repo) => repo.name === "echo"),
@@ -142,33 +139,32 @@ function  Projects() {
   ];
 
   const projectImages = [
-    "./insightify.jpeg",
-    "./coincanvas.png",
-    "./echo.png",
-    "./superwomen.png",
-    "./lumi.png",
-    "./megablog.png",
-    "./weathex.png",
-    "./todo.png",
-
-    "./joke-gen.png",
+    "./insightify.webp",
+    "./coincanvas.webp",
+    "./echo.webp",
+    "./superwomen.webp",
+    "./lumi.webp",
+    "./megablog.webp",
+    "./weathex.webp",
+    "./todo.webp",
+    "./joke-gen.webp",
   ];
 
   const controls = useAnimation();
   const textRef = useRef(null);
 
- useEffect(() => {
-   const handleScroll = () => {
-     if (window.scrollY > 200) {
-       controls.start({ opacity: 1 });
-     } else {
-       controls.start({ opacity: 0 });
-     }
-   };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        controls.start({ opacity: 1 });
+      } else {
+        controls.start({ opacity: 0 });
+      }
+    };
 
-   window.addEventListener("scroll", handleScroll);
-   return () => window.removeEventListener("scroll", handleScroll);
- }, [controls]);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [controls]);
 
   return (
     <div>
@@ -205,15 +201,21 @@ function  Projects() {
         </h1>
       </div>
       {/* project card */}
-      <HoverEffect
-        items={orderedRepositories.map((repo) => ({
-          title: repo.name,
-          description: repo.description || "Work in Progress...",
-          link: repo.url,
-          homepageUrl: repo.homepageUrl || "",
-          image: projectImages[orderedRepositories.indexOf(repo)],
-        }))}
-      />
+      <motion.span
+        initial={{ opacity: 0 }}
+        animate={controls}
+        transition={{ duration: 0.2, delay: 0 }}
+        className="inline-block mt-4">
+        <HoverEffect
+          items={orderedRepositories.map((repo) => ({
+            title: repo.name,
+            description: repo.description || "Work in Progress...",
+            link: repo.url,
+            homepageUrl: repo.homepageUrl || "",
+            image: projectImages[orderedRepositories.indexOf(repo)],
+          }))}
+        />
+      </motion.span>
     </div>
 
     // <HoverEffect
