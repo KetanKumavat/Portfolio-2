@@ -1,9 +1,6 @@
 import { cn } from "../../../utils/cn";
 import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
 import { useState } from "react";
-import Image from "next/image";
-
 
 export const HoverEffect = ({
   items,
@@ -37,11 +34,10 @@ export const HoverEffect = ({
               <motion.span
                 className="absolute h-full w-full bg-neutral-800 p-2 rounded-3xl -p-"
                 layoutId="hoverBackground"
-                initial={{ opacity: 0}}
+                initial={{ opacity: 0 }}
                 animate={{
                   opacity: 1,
                   transition: { duration: 0.15 },
-                  
                 }}
                 exit={{
                   opacity: 0,
@@ -115,8 +111,6 @@ export const Card = ({
   );
 };
 
-
-
 export const CardTitle = ({
   className,
   children,
@@ -125,7 +119,11 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn(" text-4xl text-center text-zinc-100 font-bold tracking-wide mt-4", className)}>
+    <h4
+      className={cn(
+        " text-4xl text-center text-zinc-100 font-bold tracking-wide mt-4",
+        className
+      )}>
       {children}
     </h4>
   );

@@ -119,6 +119,7 @@ function Projects() {
     ...starredRepositories.filter((repo) => repo.name === "Insightify"),
     ...starredRepositories.filter((repo) => repo.name === "CoinCanvas"),
     ...starredRepositories.filter((repo) => repo.name === "echo"),
+    ...starredRepositories.filter((repo) => repo.name === "badbusiness-events"),
     ...starredRepositories.filter((repo) => repo.name === "SuperWOMEN"),
     ...starredRepositories.filter((repo) => repo.name === "Lumi"),
     ...starredRepositories.filter((repo) => repo.name === "MegaBlog"),
@@ -134,7 +135,8 @@ function Projects() {
         repo.name !== "SuperWOMEN" &&
         repo.name !== "WeatheX" &&
         repo.name !== "Todo" &&
-        repo.name !== "MegaBlog"
+        repo.name !== "MegaBlog" &&
+        repo.name !== "badbusiness-events"
     ),
   ];
 
@@ -142,6 +144,7 @@ function Projects() {
     "./insightify.webp",
     "./coincanvas.webp",
     "./echo.webp",
+    "./badbusiness-events.webp",
     "./superwomen.webp",
     "./lumi.webp",
     "./megablog.webp",
@@ -209,9 +212,9 @@ function Projects() {
         <HoverEffect
           items={orderedRepositories.map((repo) => ({
             title: repo.name,
-            description: repo.description || "Work in Progress...",
+            description: repo.description || "",
             link: repo.url,
-            homepageUrl: repo.homepageUrl || "",
+            homepageUrl: repo.homepageUrl || "Work in Progress...",
             image: projectImages[orderedRepositories.indexOf(repo)],
           }))}
         />
