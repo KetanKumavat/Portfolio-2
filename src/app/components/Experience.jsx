@@ -38,7 +38,7 @@ const Experience = () => {
   ];
 
   return (
-    <motion.div className="px-4 md:p-8 lg:px-16">
+    <motion.div className="px-2 mt-12 w-full md:p-8 lg:px-16">
       <motion.div className="w-full flex justify-center font-bold mt-12 md:mt-24">
         <h1 className="text-white text-5xl md:text-5xl flex justify-center w-full items-center z-50">
           <motion.span
@@ -50,7 +50,7 @@ const Experience = () => {
           </motion.span>
         </h1>
       </motion.div>
-      <div className="mt-8 md:mt-36">
+      <div className="mt-24 md:mt-36">
         {exp.map((e, i) => (
           <div
             key={i}
@@ -62,12 +62,12 @@ const Experience = () => {
                 className="mx-auto max-w-md text-white object-cover rounded-lg scale-75 md:scale-95 flex"
               />
             </div>
-            <div className="w-full md:w-2/4 ">
+            <div className="w-full md:w-2/4">
               <h1 className="text-white md:text-left text-center text-2xl md:text-4xl font-bold">
                 {e.title}
               </h1>
               <br />
-              <p className="text-white/90 md:text-left text-center mt-4 text-base md:text-2xl">
+              <p className="text-white/90 md:text-left text-center mt-4 text-base md:text-2xl flex items-center px-2">
                 {e.description}
               </p>
             </div>

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import Ellipse from "../../../public/Ellipse 9.svg";
 import Image from "next/image";
 import { SparklesCore } from "./ui/Sparkles";

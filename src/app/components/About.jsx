@@ -69,11 +69,13 @@ export default function AboutMe() {
             </div>
           </div>
           <div className="flex w-full aspect-square justify-center">
-            <img
-              src={images[imageIndex]}
-              alt="Ketan"
-              className="aspect-square w-fit object-cover rounded-[25px] shadow-xl shadow-neutral-800 flex"
-            />
+            <div className="image-container">
+              <img
+                src={images[imageIndex]}
+                alt="Ketan"
+                className="aspect-square w-fit object-cover rounded-[25px] shadow-xl shadow-neutral-800 flex"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -82,11 +84,13 @@ export default function AboutMe() {
       <div className="md:hidden flex-col justify-center items-center">
         <div className="flex aspect-square justify-center items-center">
           <div className="flex justify-center items-center">
-            <img
-              src={images[imageIndex]}
-              alt="Ketan"
-              className="object-cover scale-75 flex justify-center shadow-xl overflow-hidden shadow-neutral-700 items-center aspect-square w-full rounded-[25px] scale-75"
-            />
+            <div className="image-container">
+              <img
+                src={images[imageIndex]}
+                alt="Ketan"
+                className="object-cover scale-75 flex justify-center shadow-xl overflow-hidden shadow-neutral-700 items-center aspect-square w-full rounded-[25px] scale-75"
+              />
+            </div>
           </div>
         </div>
         <TextGenerateEffect
