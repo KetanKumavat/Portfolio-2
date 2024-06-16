@@ -63,7 +63,7 @@ export default function Form() {
   return (
     <div
       ref={ref}
-      className="w-full flex flex-col justify-center items-center mt-24 md:mt-32 mb-10">
+      className="w-full flex flex-col justify-center items-center mt-24 md:mt-32 mb-10 overflow-x-hidden">
       <ToastContainer
         position="bottom-right"
         autoClose={2000}
@@ -92,7 +92,7 @@ export default function Form() {
       </h1>
       <div
         id="form"
-        className="w-3/4 md:w-1/2 bg-[rgba(255,255,255,0.070)] md:p-12 p-4 z-50 backdrop-blur-8xl mt-12 rounded-2xl transform scale-105 md:scale-100 md:border-none border h-fit md:h-fit  max-h-fit justify-center">
+        className="w-3/4 md:w-1/2 bg-[rgba(255,255,255,0.070)] md:p-12 p-4 z-50 backdrop-blur-8xl mt-12 rounded-2xl transform md:border-none border h-fit md:h-fit max-h-fit justify-center">
         <form
           className=" flex flex-col justify-center items-center w-full "
           onSubmit={sendEmail}>

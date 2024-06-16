@@ -5,10 +5,13 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  /* border: solid 2px white; */
 }
-
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
 body {
   scroll-behavior: smooth;
   background-color: #161818;

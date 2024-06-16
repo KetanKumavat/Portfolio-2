@@ -9,7 +9,7 @@ function Linker() {
 
   return (
     <div
-      className="md:flex md:justify-end md:mr-16 z-50 md:sticky md:top-28 bg-transparent"
+      className="md:flex md:justify-end md:mr-16 z-50 md:sticky md:top-28 bg-transparent overflow-x-hidden"
       id="linker">
       <button
         className="justify-end md:hidden hidden fixed -mt-16 top-28" //CHANGE HIDDEN TO FLEX FOR MOBILE THING

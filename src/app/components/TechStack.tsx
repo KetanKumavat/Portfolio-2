@@ -19,7 +19,7 @@ const TechStack: FC<TechStackProps> = ({}) => {
   return (
     <div
       ref={ref}
-      className="col-span-1 md:col-span-2 mt-96 md:px-4 mb-8 h-auto lg:col-span-2 w-full">
+      className="col-span-1 md:col-span-2 mt-40 md:mt-80 md:px-4 mb-8 h-auto lg:col-span-2 w-full">
       <div className="w-full h-fit flex font-bold justify-center items-center">
         <h1 className="text-white text-5xl flex justify-center w-full items-center mb-8 -mt-24 z-50">
           <motion.span

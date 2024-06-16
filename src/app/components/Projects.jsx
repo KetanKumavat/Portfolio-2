@@ -171,7 +171,7 @@ function Projects() {
 
   return (
     <div>
-      <div className="w-full h-fit text-white flex-col">
+      <div className="w-full h-fit text-white flex-col overflow-x-hidden">
         <HeroHighlight>
           <motion.h1
             initial={{
@@ -220,122 +220,7 @@ function Projects() {
         />
       </motion.span>
     </div>
-
-    // <HoverEffect
-    //   items={orderedRepositories.map((repo) => ({
-    //     title: repo.name,
-    //     description: repo.description || "Work in Progress...",
-    //     link: repo.url,
-    //     homepageUrl: repo.homepageUrl || "",
-    //     image:
-    //       readmeImages.find((readme) => readme.repoName === repo.name)
-    //         ?.images[0] || "",
-    //   }))}
-    // />
   );
 }
 
 export default Projects;
-
-// function usePinnedrepos() {
-//   const [pinnedrepos, setPinnedrepos] = useState([]);
-
-//   useEffect(() => {
-//     const fetchPinnedrepos = async () => {
-//       const httpLink = createHttpLink({
-//         uri: "https://api.github.com/graphql",
-//       });
-
-//       const authLink = setContext((_, { headers }) => {
-//         return {
-//           headers: {
-//             ...headers,
-//             authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_ACCESS_TOKEN}`,
-//           },
-//         };
-//       });
-
-//       const client = new ApolloClient({
-//         link: authLink.concat(httpLink),
-//         cache: new InMemoryCache(),
-//       });
-
-//       const { data } = await client.query({
-//         query: gql`
-//           {
-//             user(login: "KetanKumavat") {
-//               starredRepositories(first: 10) {
-//                 totalCount
-//                 edges {
-//                   node {
-//                     ... on Repository {
-//                       id
-//                       name
-//                       url
-//                       description
-//                     }
-//                   }
-//                 }
-//               }
-//             }
-//           }
-//         `,
-//       });
-
-//       if (data?.user?.pinnedrepos?.edges) {
-//         const pinnedreposData = data.user.pinnedrepos.edges.map(
-//           ({ node }) => node
-//         );
-//         setPinnedrepos(pinnedreposData);
-//       }
-//     };
-
-//     fetchPinnedrepos();
-//   }, []);
-
-//   return pinnedrepos;
-// }
-
-// for pinned repo
-
-// function Projects() {
-//   const pinnedrepos = usePinnedrepos();
-
-//   return (
-//     <div className="w-full h-screen flex justify-center repos-center">
-//       {pinnedrepos &&
-//         pinnedrepos.map((repo) => {
-//           return (
-//             <div
-//               key={repo.id}
-//               className="bg-white p-4 rounded-lg shadow-lg m-4">
-//               <h2 className="text-black font-bold">{repo.name}</h2>
-//               {repo.description && (
-//                 <p className="text-gray-700">{repo.description}</p>
-//               )}
-//               <a
-//                 href={repo.url}
-//                 className="text-blue-500 hover:underline"
-//                 target="_blank"
-//                 rel="noopener noreferrer">
-//                 View Github Repository
-//               </a>
-//               {repo.deployments &&
-//                 repo.deployments.nodes &&
-//                 repo.deployments.nodes.length > 0 && (
-//                   <a
-//                     href={repo.deployments.nodes[0].latestStatus.environmentUrl}
-//                     className="text-blue-500 hover:underline"
-//                     target="_blank"
-//                     rel="noopener noreferrer">
-//                     View Deployment
-//                   </a>
-//                 )}
-//             </div>
-//           );
-//         })}
-//     </div>
-//   );
-// }
-
-//for starred repo

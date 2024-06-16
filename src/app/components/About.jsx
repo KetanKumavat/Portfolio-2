@@ -3,9 +3,9 @@ import React, { useRef, useEffect, useState } from "react";
 import { TextGenerateEffect } from "./ui/text-generate-effect.tsx";
 import { motion, useAnimation } from "framer-motion";
 import TechStack from "./TechStack.tsx";
-import Image from "next/image";
+import Experience from "./Experience";
 
-const words = `I am a passionate full-stack developer based in India, currently in my 2nd year of engineering. I've crafted several projects and am deeply engrossed in learning data structures and algorithms. Currently seeking enriching internship opportunities to further enhance my skills and contribute to meaningful projects.`;
+const words = `I am a passionate full-stack developer based in India, currently in my 2nd year of engineering. I've crafted several projects and am deeply engrossed in learning data structures and algorithms. I'm always on the lookout for internship opportunities where I can learn more, contribute, and grow. Let's build something amazing together.`;
 
 const images = [
   "/ketan1.webp",
@@ -42,7 +42,7 @@ export default function AboutMe() {
   }, [controls]);
 
   return (
-    <motion.div className="w-full flex mt-[20em] h-fit flex-col items-center justify-center">
+    <motion.div className="w-full flex mt-[20em] h-fit flex-col items-center justify-center overflow-x-hidden">
       <motion.div className="w-fit flex font-bold">
         <h1 className="text-white text-5xl flex justify-center w-full items-center z-50">
           <motion.span
@@ -72,7 +72,7 @@ export default function AboutMe() {
             <img
               src={images[imageIndex]}
               alt="Ketan"
-              className="object-cover rounded-[25px] shadow-xl overflow-hidden shadow-neutral-800 flex"
+              className="aspect-square w-fit object-cover rounded-[25px] shadow-xl shadow-neutral-800 flex"
             />
           </div>
         </div>
@@ -100,6 +100,7 @@ export default function AboutMe() {
           DSA, Typescript
         </h1>
       </div>
+      <Experience />
       {/* skills */}
       <TechStack />
     </motion.div>

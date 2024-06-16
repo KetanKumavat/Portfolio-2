@@ -83,8 +83,6 @@ export const Card = ({
           <img
             src={imageUrl}
             alt="Project"
-            // width={400}
-            // height={300}
             className="w-full h-auto rounded-lg"
           />
           {children}
