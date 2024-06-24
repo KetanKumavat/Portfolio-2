@@ -1,14 +1,18 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 function Toggler() {
   const Router = useRouter();
-  const [activeButton, setActiveButton] = useState("info");
+  const pathname = usePathname();
+  const [activeButton, setActiveButton] = useState(
+    pathname === "/work" ? "work" : "info"
+  );
 
   useEffect(() => {
-    setActiveButton(Router.pathname === "/work" ? "work" : "info");
-  }, [Router.pathname]);
+    setActiveButton(pathname === "/work" ? "work" : "info");
+    console.log("pathname", pathname);
+  }, [pathname]);
 
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
