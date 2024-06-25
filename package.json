@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@apollo/client": "^3.9.5",
-    "@react-hook/media-query": "^1.1.1",
     "@react-three/drei": "^9.105.6",
     "@react-three/fiber": "^8.16.6",
     "@tsparticles/engine": "^3.2.2",
@@ -20,17 +19,12 @@
     "framer-motion": "^11.0.25",
     "graphql": "^16.8.1",
     "lucide-react": "^0.366.0",
-    "mini-svg-data-uri": "^1.4.4",
     "next": "14.1.0",
     "nodemailer": "^6.9.13",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.0.1",
-    "react-intersection-observer": "^9.8.2",
-    "react-sticky": "^6.0.3",
     "react-toastify": "^10.0.5",
-    "react-use-measure": "^2.1.1",
-    "sharp": "^0.33.3",
     "tailwind-merge": "^2.2.2"
   },
   "devDependencies": {

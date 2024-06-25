@@ -2,7 +2,6 @@
 import React, { useRef } from "react";
 import Ellipse from "../../../public/Ellipse 9.svg";
 import Image from "next/image";
-import { SparklesCore } from "./ui/Sparkles";
 import { motion } from "framer-motion";
 import { FiDownload } from "react-icons/fi";
 
@@ -11,13 +10,13 @@ function Home() {
 
   return (
     <motion.div
-      className="flex mt-[18vh] flex-col w-full h-fit justify-center items-center z-0 bg-transparent overflow-x-hidden"
+      className="flex mt-[18vh] flex-col w-full h-fit justify-center items-center z-0 bg-transparent"
       ref={constraintsRef}>
       <div className="flex flex-col justify-center items-center overflow-x-hidden">
         <Image
           src={Ellipse}
           alt="ellipse"
-          className="absolute opacity-85 top-[45vh] scale-110 md:hidden pointer-events-none "
+          className="absolute scale-y-150 md:scale-105 pointer-events-none "
         />
       </div>
       <div className="h-fit w-full flex flex-col items-center justify-center overflow-hidden rounded-md overflow-x-hidden">
@@ -28,21 +27,7 @@ function Home() {
           Full Stack Developer
         </h2>
         <div className="h-4"></div>
-        <div className="w-[40rem] relative h-44">
-          <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-white/45 to-transparent h-[2px] w-3/4 blur-sm" />
-          <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent  to-transparent h-[5px] w-1/4 blur-sm" />
-          <div className="absolute inset-x-60 h-[2.5px] top-0 bg-gradient-to-r from-transparent via-white/90 to-transparent w-1/4" />
-          <SparklesCore
-            background="transparent"
-            minSize={1}
-            maxSize={2}
-            particleDensity={700}
-            className=" hidden md:block w-full rounded-full h-full md:scale-100"
-            particleColor="#FFFFFF"
-          />
-          <div className="md:absolute md:flex hidden md:inset-0 md:bg-[#161818] md:md:w-full h-full md:[mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
-        </div>
-        <div className="py-8 -mt-16" id="downloadResume">
+        <div className="py-8 mt-24" id="downloadResume">
           <motion.div
             drag
             dragConstraints={constraintsRef}
@@ -69,7 +54,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="flex md:mt-[20vh] mt-0 flex-row gap-5 md:mr-0 mr-0 justify-center items-center">
+      <div className="flex md:mt-[20vh] mt-8 flex-row gap-5 md:mr-0 mr-0 justify-center items-center">
         <div>
           <a href="https://github.com/KetanKumavat" target="_blank">
             <svg

@@ -1,11 +1,11 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 function Greeting() {
-  const [greeting, setGreeting] = React.useState("");
-  const [fade, setFade] = React.useState(false);
+  const [greeting, setGreeting] = useState("");
+  const [fade, setFade] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const currentTime = new Date().getHours();
     if (currentTime >= 5 && currentTime < 12) {
       setGreeting("Good Morning.");
@@ -37,7 +37,7 @@ function Greeting() {
         id="greet">
         {greeting === "Ketan." && (
           <img
-            src="/ketan1.webp"
+            src="/ketan5.webp"
             alt="Ketan"
             className="hidden md:flex w-[4.5rem] md:mt-[-11vh] aspect-square rounded-full object-cover"
           />
@@ -46,11 +46,6 @@ function Greeting() {
           {greeting}
         </h1>
       </div>
-      <img
-        src="/ketan5.webp"
-        alt="Ketan"
-        className="scale-75 md:hidden w-28 -mt-[7.2vh] aspect-square rounded-full object-cover"
-      />
     </div>
   );
 }
