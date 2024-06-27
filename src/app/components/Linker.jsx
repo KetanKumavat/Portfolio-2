@@ -9,7 +9,7 @@ function Linker() {
 
   return (
     <div
-      className="md:flex md:justify-end md:mr-16 z-50 md:sticky md:top-28 bg-transparent overflow-x-hidden"
+      className="md:flex md:justify-end md:mr-16 z-50 md:sticky md:top-28 bg-transparent"
       id="linker">
       <button
         className="justify-end md:hidden hidden fixed -mt-16 top-28" //CHANGE HIDDEN TO FLEX FOR MOBILE THING
@@ -60,7 +60,7 @@ function Linker() {
           </div>
           <div className="flex items-center gap-2">
             <a
-              href="https://drive.google.com/file/d/18jBdNUnphIodz3OQUM2N5UDD3jyFp9QA/view"
+              href="https://drive.google.com/file/d/1qdP9gbn4EuxLCFTEMzDFbuzpUbDVqHYY/view"
               target="_blank"
               className="flex flex-row gap-2 ml-[38vh]"
               id="link3">
@@ -107,7 +107,7 @@ function Linker() {
           </svg>
         </a>
         <a
-          href="https://drive.google.com/file/d/18jBdNUnphIodz3OQUM2N5UDD3jyFp9QA/view"
+          href="https://drive.google.com/file/d/1qdP9gbn4EuxLCFTEMzDFbuzpUbDVqHYY/view"
           target="_blank"
           className="flex flex-row gap-2 md:-mt-10">
           <h1 className="text-white text-light text-sm">Resume</h1>

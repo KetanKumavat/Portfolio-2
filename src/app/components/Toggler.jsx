@@ -5,24 +5,28 @@ import { useRouter, usePathname } from "next/navigation";
 function Toggler() {
   const Router = useRouter();
   const pathname = usePathname();
+
+  useEffect(() => {
+    Router.prefetch("/");
+    Router.prefetch("/work");
+  }, [Router]);
+
   const [activeButton, setActiveButton] = useState(
     pathname === "/work" ? "work" : "info"
   );
 
   useEffect(() => {
     setActiveButton(pathname === "/work" ? "work" : "info");
-    console.log("pathname", pathname);
   }, [pathname]);
 
   const handleButtonClick = (buttonName) => {
-    setActiveButton(buttonName);
     Router.push(buttonName === "info" ? "/" : "/work");
   };
 
   return (
     <div className="nav">
       <div className="wrapper">
-        <div id="tabsHolder" className="">
+        <div id="tabsHolder">
           <input
             type="radio"
             name="tabs"

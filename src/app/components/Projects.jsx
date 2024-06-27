@@ -7,7 +7,6 @@ import {
   gql,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
 import { HoverEffect } from "./ui/card-hover-effect";
 import { HeroHighlight, Highlight } from "./ui/hero-highlight";
@@ -65,16 +64,7 @@ function useStarredRepositories() {
         const starredRepositoriesData = data.user.starredRepositories.edges.map(
           ({ node }) => node
         );
-        const repositoriesWithReadme = await Promise.all(
-          starredRepositoriesData.map(async (repo) => {
-            const readmeResponse = await fetch(
-              `https://raw.githubusercontent.com/KetanKumavat/${repo.name}/main/README.md`
-            );
-            const readmeText = await readmeResponse.text();
-            return { ...repo, readmeText };
-          })
-        );
-        setStarredRepositories(repositoriesWithReadme);
+        setStarredRepositories(starredRepositoriesData);
       }
     };
 
@@ -84,36 +74,8 @@ function useStarredRepositories() {
   return starredRepositories;
 }
 
-function extractImageUrls(text) {
-  const regex = /<img.*?src="([^"]*)".*?>/g;
-  const matches = [];
-  let match;
-  while ((match = regex.exec(text))) {
-    matches.push(match[1]);
-  }
-  return matches;
-}
-
 function Projects() {
   const starredRepositories = useStarredRepositories();
-  const [readmeImages, setReadmeImages] = useState([]);
-
-  useEffect(() => {
-    const fetchReadmeImages = async () => {
-      const imagesPromises = starredRepositories.map(async (repo) => {
-        const readmeResponse = await fetch(
-          `https://raw.githubusercontent.com/KetanKumavat/${repo.name}/main/README.md`
-        );
-        const readmeText = await readmeResponse.text();
-        const images = extractImageUrls(readmeText);
-        return { repoName: repo.name, images };
-      });
-      const imagesData = await Promise.all(imagesPromises);
-      setReadmeImages(imagesData);
-    };
-
-    fetchReadmeImages();
-  }, [starredRepositories]);
 
   const orderedRepositories = [
     ...starredRepositories.filter((repo) => repo.name === "Insightify"),
@@ -125,7 +87,6 @@ function Projects() {
     ...starredRepositories.filter((repo) => repo.name === "MegaBlog"),
     ...starredRepositories.filter((repo) => repo.name === "WeatheX"),
     ...starredRepositories.filter((repo) => repo.name === "Todo"),
-
     ...starredRepositories.filter(
       (repo) =>
         repo.name !== "Insightify" &&
