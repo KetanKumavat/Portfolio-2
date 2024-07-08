@@ -17,7 +17,6 @@ const images = [
 
 export default function AboutMe() {
   const controls = useAnimation();
-  const textRef = useRef(null);
   const [imageIndex, setImageIndex] = useState(0);
 
   useEffect(() => {
@@ -54,8 +53,8 @@ export default function AboutMe() {
           </motion.span>
         </h1>
       </motion.div>
-      <div className="md:flex-col gap-0 md:items-center w-full mt-24">
-        <div className=" hidden md:flex justify-center px-12 w-full">
+      <div className="md:flex md:flex-row flex-col gap-0 md:items-center w-full mt-24">
+        <div className="hidden md:flex justify-center px-12 w-full">
           <div className="flex flex-col gap-10">
             <TextGenerateEffect
               words={words}
@@ -68,13 +67,14 @@ export default function AboutMe() {
               </h1>
             </div>
           </div>
-          <div className="flex w-full aspect-square justify-center">
-            <div className="image-container">
+          <div className="flex w-[50vh] aspect-square justify-center flex-shrink-0">
+            <div className="image-container relative w-full">
               <img
                 src={images[imageIndex]}
                 alt="Ketan"
-                className="aspect-square w-fit object-cover rounded-[25px] shadow-xl shadow-neutral-800 flex"
+                className="aspect-square w-fit object-cover rounded-[25px] shadow-xl shadow-neutral-800"
               />
+              <div className="overlay absolute inset-0 rounded-[25px] bg-gradient-to-b from-transparent to-black/80 pointer-events-none"></div>
             </div>
           </div>
         </div>
@@ -83,13 +83,14 @@ export default function AboutMe() {
       {/* mobile view */}
       <div className="md:hidden flex-col justify-center items-center">
         <div className="flex aspect-square justify-center items-center">
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center flex-shrink">
             <div className="image-container">
               <img
                 src={images[imageIndex]}
                 alt="Ketan"
-                className="object-cover scale-75 flex justify-center shadow-xl overflow-hidden shadow-neutral-700 items-center aspect-square w-full rounded-[25px] scale-75"
+                className="object-cover flex justify-center shadow-xl overflow-hidden shadow-neutral-800 items-center aspect-square w-full rounded-[25px] scale-75"
               />
+              <div className="overlay absolute inset-0 rounded-[25px] bg-gradient-to-b from-transparent to-black/80 pointer-events-none scale-75"></div>
             </div>
           </div>
         </div>
@@ -101,7 +102,7 @@ export default function AboutMe() {
           <span className="font-bold py-8 text-center">
             Currently Learning:{" "}
           </span>{" "}
-          DSA, Typescript
+          DSA, Typescript, App Dev
         </h1>
       </div>
       <Experience />

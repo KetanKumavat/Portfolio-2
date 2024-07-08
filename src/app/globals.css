@@ -162,14 +162,20 @@ input {
 .image-container {
   position: relative;
   display: inline-block;
+  width: 100%;
+  height: fit-content;
+  max-height: fit-content;
+  /* max-width: 400px; adjust this value as needed */
 }
 
 .image-container img {
   display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 25px;
 }
 
-.image-container::after {
-  content: "";
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -178,12 +184,6 @@ input {
   background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.848));
   border-radius: 25px;
   pointer-events: none;
-}
-
-@media (max-width: 670px) {
-  .image-container::after {
-    scale: 0.75;
-  }
 }
 
 /* scroll bar */
@@ -214,4 +214,33 @@ html {
 
 body {
   -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.scroller-container {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroller {
+  display: flex;
+  animation: scroll 30s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.tech-icon {
+  width: 3.7rem;
+  height: 3.7rem;
+  filter: grayscale(1);
+  margin: 0 1rem;
 }

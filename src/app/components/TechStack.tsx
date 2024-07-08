@@ -1,3 +1,4 @@
+"use client";
 import { FC, useEffect } from "react";
 import TechCard from "./Card/TechCard";
 import { motion } from "framer-motion";
@@ -9,6 +10,31 @@ interface TechStackProps {}
 const TechStack: FC<TechStackProps> = ({}) => {
   const controls = useAnimation();
   const { ref, inView } = useInView();
+
+  const techIcons = [
+    { id: "html", url: "https://skillicons.dev/icons?i=html" },
+    { id: "css", url: "https://skillicons.dev/icons?i=css" },
+    { id: "tailwind", url: "https://skillicons.dev/icons?i=tailwind" },
+    { id: "react", url: "https://skillicons.dev/icons?i=react" },
+    { id: "vite", url: "https://skillicons.dev/icons?i=vite" },
+    { id: "nextjs", url: "https://skillicons.dev/icons?i=nextjs" },
+    { id: "nodejs", url: "https://skillicons.dev/icons?i=nodejs" },
+    { id: "express", url: "https://skillicons.dev/icons?i=express" },
+    { id: "mongodb", url: "https://skillicons.dev/icons?i=mongodb" },
+    { id: "firebase", url: "https://skillicons.dev/icons?i=firebase" },
+    { id: "postgresql", url: "https://skillicons.dev/icons?i=postgresql" },
+    { id: "prisma", url: "https://skillicons.dev/icons?i=prisma" },
+    { id: "git", url: "https://skillicons.dev/icons?i=git" },
+    { id: "github", url: "https://skillicons.dev/icons?i=github" },
+    { id: "vercel", url: "https://skillicons.dev/icons?i=vercel" },
+    { id: "vscode", url: "https://skillicons.dev/icons?i=vscode" },
+    { id: "postman", url: "https://skillicons.dev/icons?i=postman" },
+    { id: "md", url: "https://skillicons.dev/icons?i=markdown" },
+    { id: "markdown", url: "https://skillicons.dev/icons?i=markdown" },
+    { id: "c", url: "https://skillicons.dev/icons?i=c" },
+    { id: "cpp", url: "https://skillicons.dev/icons?i=cpp" },
+    { id: "py", url: "https://skillicons.dev/icons?i=python" },
+  ];
 
   useEffect(() => {
     if (inView) {
@@ -31,9 +57,7 @@ const TechStack: FC<TechStackProps> = ({}) => {
           </motion.span>
         </h1>
       </div>
-      <div
-        ref={ref}
-        className="flex justify-center items-center col-span-1 mt-10 md:col-span-2 md:px-4 mb-8 h-auto lg:col-span-2 w-full">
+      <div className="flex justify-center items-center col-span-1 mt-10 md:col-span-2 md:px-4 mb-8 h-auto lg:col-span-2 w-full flex-col">
         <motion.div
           initial={{ opacity: 0 }}
           animate={controls}
@@ -41,7 +65,7 @@ const TechStack: FC<TechStackProps> = ({}) => {
           className="grid grid-cols-1 md:grid-cols-2 lg:w-3/4 w-full lg:grid-cols-2 gap-12 text-white text-2xl scale-95 md:scale-100">
           <TechCard
             title="Frontend"
-            classaName="bg-neutral-700 text-white "
+            classaName="bg-neutral-700 text-white"
             tech={[
               "HTML",
               "CSS",
@@ -67,6 +91,29 @@ const TechStack: FC<TechStackProps> = ({}) => {
             tech={["C/C++", "Javascript", "Python"]}
           />
         </motion.div>
+
+        <div className="scroller-container mt-24">
+          <motion.div
+            className="scroller"
+            initial={{ x: "0%" }}
+            animate={{
+              x: "-50%",
+              transition: {
+                duration: techIcons.length * 3,
+                repeat: Infinity,
+                ease: "linear",
+              },
+            }}>
+            {techIcons.concat(techIcons).map((icon, index) => (
+              <img
+                key={index}
+                src={icon.url}
+                alt={icon.id}
+                className="tech-icon"
+              />
+            ))}
+          </motion.div>
+        </div>
       </div>
     </div>
   );

@@ -38,7 +38,7 @@ export const TextGenerateEffect = ({
     <div className={cn("font-normal", className)}>
       <div className="mt-8">
         <div
-          className="dark:text-white text-[22px] -mt-16 md:mt-0 md:text-3xl leading-snug"
+          className="dark:text-white text-2xl -mt-16 md:mt-0 md:text-3xl leading-snug"
           ref={ref}
           style={{ display: "flex", flexDirection: "column" }}>
           <motion.div
