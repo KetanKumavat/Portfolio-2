@@ -36,6 +36,34 @@ const TechStack: FC<TechStackProps> = ({}) => {
     { id: "py", url: "https://skillicons.dev/icons?i=python" },
   ];
 
+  const techIcons1 = [
+    { id: "js", url: "https://skillicons.dev/icons?i=js" },
+    { id: "html", url: "https://skillicons.dev/icons?i=html" },
+    { id: "css", url: "https://skillicons.dev/icons?i=css" },
+    { id: "bootstrap", url: "https://skillicons.dev/icons?i=bootstrap" },
+    { id: "typescript", url: "https://skillicons.dev/icons?i=typescript" },
+    { id: "figma", url: "https://skillicons.dev/icons?i=figma" },
+    { id: "postgresql", url: "https://skillicons.dev/icons?i=postgresql" },
+    { id: "git", url: "https://skillicons.dev/icons?i=git" },
+    { id: "md", url: "https://skillicons.dev/icons?i=markdown" },
+    { id: "mongodb", url: "https://skillicons.dev/icons?i=mongodb" },
+    { id: "firebase", url: "https://skillicons.dev/icons?i=firebase" },
+    { id: "prisma", url: "https://skillicons.dev/icons?i=prisma" },
+    { id: "react", url: "https://skillicons.dev/icons?i=react" },
+    { id: "tailwind", url: "https://skillicons.dev/icons?i=tailwind" },
+    { id: "vite", url: "https://skillicons.dev/icons?i=vite" },
+    { id: "github", url: "https://skillicons.dev/icons?i=github" },
+    { id: "nextjs", url: "https://skillicons.dev/icons?i=nextjs" },
+    { id: "express", url: "https://skillicons.dev/icons?i=express" },
+    { id: "nodejs", url: "https://skillicons.dev/icons?i=nodejs" },
+    { id: "postman", url: "https://skillicons.dev/icons?i=postman" },
+    { id: "c", url: "https://skillicons.dev/icons?i=c" },
+    { id: "cpp", url: "https://skillicons.dev/icons?i=cpp" },
+    { id: "py", url: "https://skillicons.dev/icons?i=python" },
+    { id: "vercel", url: "https://skillicons.dev/icons?i=vercel" },
+    { id: "vscode", url: "https://skillicons.dev/icons?i=vscode" },
+  ];
+
   useEffect(() => {
     if (inView) {
       controls.start({ opacity: 1 });
@@ -105,6 +133,29 @@ const TechStack: FC<TechStackProps> = ({}) => {
               },
             }}>
             {techIcons.concat(techIcons).map((icon, index) => (
+              <img
+                key={index}
+                src={icon.url}
+                alt={icon.id}
+                className="tech-icon"
+              />
+            ))}
+          </motion.div>
+        </div>
+
+        <div className="scroller-container2 mt-24">
+          <motion.div
+            className="scroller2"
+            initial={{ x: "0%" }}
+            animate={{
+              x: "-50%",
+              transition: {
+                duration: techIcons.length * 3,
+                repeat: Infinity,
+                ease: "linear",
+              },
+            }}>
+            {techIcons1.concat(techIcons).map((icon, index) => (
               <img
                 key={index}
                 src={icon.url}
