@@ -5,7 +5,7 @@ import Linker from "./components/Linker";
 import Greeting from "./components/Greeting";
 import StarsCanvas from "./components/ui/Background";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics";
+import { Analytics } from "@vercel/analytics/react";
 
 const space = Space_Grotesk({ subsets: ["latin"] });
 
