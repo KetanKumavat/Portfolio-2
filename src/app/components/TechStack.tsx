@@ -29,7 +29,6 @@ const TechStack: FC<TechStackProps> = ({}) => {
     { id: "vercel", url: "https://skillicons.dev/icons?i=vercel" },
     { id: "vscode", url: "https://skillicons.dev/icons?i=vscode" },
     { id: "postman", url: "https://skillicons.dev/icons?i=postman" },
-    { id: "md", url: "https://skillicons.dev/icons?i=markdown" },
     { id: "markdown", url: "https://skillicons.dev/icons?i=markdown" },
     { id: "c", url: "https://skillicons.dev/icons?i=c" },
     { id: "cpp", url: "https://skillicons.dev/icons?i=cpp" },

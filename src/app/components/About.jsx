@@ -54,7 +54,7 @@ export default function AboutMe() {
         </h1>
       </motion.div>
       <div className="md:flex md:flex-row flex-col gap-0 md:items-center w-full mt-24">
-        <div className="hidden md:flex justify-center px-12 w-full">
+        <div className="hidden md:hidden lg:flex justify-center px-12 w-full">
           <div className="flex flex-col gap-10">
             <TextGenerateEffect
               words={words}
@@ -63,7 +63,7 @@ export default function AboutMe() {
             <div>
               <h1 className="text-2xl hidden md:text-left md:block md:text-2xl ml-16 text-white/80 font-normal">
                 <span className="font-bold px-2 ">Currently Learning: </span>{" "}
-                DSA, Typescript
+                DSA, Typescript, App Dev
               </h1>
             </div>
           </div>
@@ -81,7 +81,7 @@ export default function AboutMe() {
       </div>
 
       {/* mobile view */}
-      <div className="md:hidden flex-col justify-center items-center">
+      <div className="lg:hidden flex-col justify-center items-center">
         <div className="flex aspect-square justify-center items-center">
           <div className="flex justify-center items-center flex-shrink">
             <div className="image-container">
@@ -96,7 +96,7 @@ export default function AboutMe() {
         </div>
         <TextGenerateEffect
           words={words}
-          className="text-white/65 w-full px-5 mt-14 flex justify-center items-center text-center md:text-right"
+          className="text-white/65 w-full px-5 mt-14 flex justify-center items-center text-center lg:text-right"
         />
         <h1 className="text-xl md:text-2xl text-center mt-12 md:mt-5 text-white/80 font-normal">
           <span className="font-bold py-8 text-center">

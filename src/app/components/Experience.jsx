@@ -54,20 +54,20 @@ const Experience = () => {
         {exp.map((e, i) => (
           <div
             key={i}
-            className="flex flex-col md:flex-row gap-6 md:gap-10 mt-12 md:mt-16">
-            <div className="w-full md:w-1/2 flex justify-center items-center">
+            className="flex flex-col lg:flex-row gap-6 lg:gap-10 mt-12 lg:mt-16">
+            <div className="w-full lg:w-1/2 flex justify-center items-center">
               <img
                 src={e.img}
                 alt="experience"
-                className="mx-auto max-w-md text-white object-cover rounded-lg scale-75 md:scale-95 flex"
+                className="mx-auto max-w-md text-white object-cover rounded-lg scale-75 lg:scale-95 flex"
               />
             </div>
-            <div className="w-full md:w-2/4">
-              <h1 className="text-white md:text-left text-center text-2xl md:text-4xl font-bold">
+            <div className="w-full lg:w-2/4">
+              <h1 className="text-white lg:text-left text-center text-2xl lg:text-4xl font-bold">
                 {e.title}
               </h1>
               <br />
-              <p className="text-white/90 md:text-left text-center mt-4 text-base md:text-2xl flex items-center px-2">
+              <p className="text-white/90 lg:text-left text-center mt-4 text-base lg:text-2xl flex items-center px-2">
                 {e.description}
               </p>
             </div>
