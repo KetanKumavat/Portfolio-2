@@ -5,6 +5,7 @@ import Linker from "./components/Linker";
 import Greeting from "./components/Greeting";
 import StarsCanvas from "./components/ui/Background";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics";
 
 const space = Space_Grotesk({ subsets: ["latin"] });
 
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
         <Linker />
         <Greeting />
         <SpeedInsights />
+        <Analytics />
         {children}
       </body>
     </html>
