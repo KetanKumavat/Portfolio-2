@@ -4,6 +4,8 @@ import Toggler from "./components/Toggler";
 import Linker from "./components/Linker";
 import Greeting from "./components/Greeting";
 import StarsCanvas from "./components/ui/Background";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 const space = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata = {
@@ -28,6 +30,7 @@ export default function RootLayout({ children }) {
         <Toggler />
         <Linker />
         <Greeting />
+        <SpeedInsights />
         {children}
       </body>
     </html>

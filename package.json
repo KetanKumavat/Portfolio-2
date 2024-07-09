@@ -14,6 +14,7 @@
     "@react-three/drei": "^9.105.6",
     "@react-three/fiber": "^8.16.6",
     "@tsparticles/engine": "^3.2.2",
+    "@vercel/speed-insights": "^1.0.12",
     "framer-motion": "^11.0.25",
     "graphql": "^16.8.1",
     "lucide-react": "^0.366.0",
