@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import {
   ApolloClient,
   InMemoryCache,
@@ -111,11 +111,9 @@ function Projects() {
     "./megablog.webp",
     "./weathex.webp",
     "./todo.webp",
-    "./joke-gen.webp",
   ];
 
   const controls = useAnimation();
-  const textRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {

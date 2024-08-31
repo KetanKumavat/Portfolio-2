@@ -18,22 +18,34 @@ const Experience = () => {
 
   const exp = [
     {
-      title: "Full Stack Developer at MentorMenti",
-      img: "/mentor.png",
-      description:
-        "At MentorMenti, I had an opportunity to work for the development of an event registration platform. Using the MERN stack, I built RESTful APIs to power everything from event sign-ups to admin management. My work involved setting up secure login systems with JWT, designing dynamic forms for a smooth user experience, and ensuring the backend could handle it all with Node.js, Express.js, and MongoDB. I also worked on the frontend, using React.js and TailwindCSS to create a responsive and intuitive UI for BadBusiness Events website.",
+      title: "Software Developer Intern at Kifayti Health",
+      img: "/kifayti_logo.webp",
+      duration: "August 2024 - Present",
+      tech: "ReactJs, TailwindCSS, NodeJs, ExpressJs, MariaDB,",
     },
     {
-      title: "Winner of DevQuest Hackathon By IIT Jodhpur",
-      img: "/hackathon.webp",
-      description:
-        "I participated in a 24-hour hackathon organized by IIT Jodhpur and my team won the first prize. My team and I built a web application Insightify, a platform that provides links to products with varying prices on different platforms through web scraping, offering users real-time price comparison and insightful price trend analysis.",
+      title: "Frontend Developer at go4explore",
+      img: "/go4explore.webp",
+      duration: "August 2024 - September 2024",
+      tech: "NextJs, TailwindCSS",
+    },
+    {
+      title: "Full Stack Developer at MentorMenti",
+      img: "/mentor.png",
+      duration: "April 2024 - June 2024",
+      tech: "ReactJs, TailwindCSS, NodeJs, ExpressJs, MongoDB",
     },
     {
       title: "Technical Member at GFG Students' Chapter TCET",
       img: "/image.png",
-      description:
-        "As a technical member, I was responsible for making the committee's website. Used technologies like ReactJS, TailwindCSS to create a responsive and dynamic website. I also created DSA questions for college coding contests organized by the GeeksforGeeks Students' Chapter TCET.",
+      duration: "September 2023 - Present",
+      tech: "ReactJs, TailwindCSS",
+    },
+    {
+      title: "Won DevQuest Hackathon By IIT Jodhpur",
+      img: "/hackathon.webp",
+      duration: "January 2024",
+      tech: "NextJs, TailwindCSS, NodeJs, ExpressJs, MongoDB, Flask",
     },
   ];
 
@@ -62,16 +74,17 @@ const Experience = () => {
                 className="mx-auto max-w-md text-white object-cover rounded-lg scale-75 lg:scale-95 flex"
               />
             </div>
-            <div className="w-full lg:w-2/4">
-              <h1 className="text-white lg:text-left text-center text-2xl lg:text-4xl font-bold">
+            <div className="w-full lg:w-2/4 text-center lg:text-left">
+              <h1 className="text-white text-2xl lg:text-4xl font-bold">
                 {e.title}
               </h1>
-              <br />
-              <p className="text-white/90 lg:text-left text-center mt-4 text-base lg:text-2xl flex items-center px-2">
-                {e.description}
+              <p className="text-white/90 mt-4 text-xl lg:text-2xl flex justify-center lg:justify-start px-2">
+                {e.duration}
+              </p>
+              <p className="text-white/80 mt-4 text-lg lg:text-2xl flex justify-center lg:justify-start px-2">
+                {e.tech}
               </p>
             </div>
-            {/* <hr /> */}
           </div>
         ))}
       </div>

@@ -87,7 +87,7 @@ export default function Form() {
           </motion.span>
         </h1>
       </div>
-      <h1 className="text-white/65 mt-10 text-center text-3xl flex justify-center w-full items-center mb-10 md:mb-0">
+      <h1 className="text-white/65 mt-10 text-center md:text-2xl text-2xl flex justify-center w-full items-center mb-10 md:mb-0">
         Currently Looking for Internship and Job Opportunities.{" "}
       </h1>
       <div

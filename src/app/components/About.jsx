@@ -58,7 +58,7 @@ export default function AboutMe() {
           <div className="flex flex-col gap-10">
             <TextGenerateEffect
               words={words}
-              className="text-white/35 px-16 w-full md:w-1/2 flex justify-center items-center text-justify md:text-left"
+              className="text-white/35 px-16 w-full flex justify-center items-center text-justify md:text-left"
             />
             <div>
               <h1 className="text-2xl hidden md:text-left md:block md:text-2xl ml-16 text-white/80 font-normal">
