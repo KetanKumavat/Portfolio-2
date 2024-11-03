@@ -38,7 +38,7 @@ function useStarredRepositories() {
         query: gql`
           {
             user(login: "KetanKumavat") {
-              starredRepositories(first: 10) {
+              starredRepositories(first: 20) {
                 edges {
                   node {
                     ... on Repository {
@@ -79,10 +79,12 @@ function Projects() {
 
   const orderedRepositories = [
     ...starredRepositories.filter((repo) => repo.name === "Insightify"),
+    ...starredRepositories.filter((repo) => repo.name === "Ascend"),
     ...starredRepositories.filter((repo) => repo.name === "CoinCanvas"),
     ...starredRepositories.filter((repo) => repo.name === "echo"),
     ...starredRepositories.filter((repo) => repo.name === "badbusiness-events"),
     ...starredRepositories.filter((repo) => repo.name === "SuperWOMEN"),
+    ...starredRepositories.filter((repo) => repo.name === "PixelPaws"),
     ...starredRepositories.filter((repo) => repo.name === "Lumi"),
     ...starredRepositories.filter((repo) => repo.name === "MegaBlog"),
     ...starredRepositories.filter((repo) => repo.name === "WeatheX"),
@@ -97,16 +99,20 @@ function Projects() {
         repo.name !== "WeatheX" &&
         repo.name !== "Todo" &&
         repo.name !== "MegaBlog" &&
-        repo.name !== "badbusiness-events"
+        repo.name !== "badbusiness-events" &&
+        repo.name !== "Ascend" &&
+        repo.name !== "PixelPaws"
     ),
   ];
 
   const projectImages = [
     "./insightify.webp",
+    "./ascend.webp",
     "./coincanvas.webp",
     "./echo.webp",
     "./badbusiness-events.webp",
     "./superwomen.webp",
+    "./pixelpaws.webp",
     "./lumi.webp",
     "./megablog.webp",
     "./weathex.webp",
