@@ -5,7 +5,7 @@ import { motion, useAnimation } from "framer-motion";
 import TechStack from "./TechStack.tsx";
 import Experience from "./Experience";
 
-const words = `I am a passionate full-stack developer based in India, currently in my 2nd year of engineering. I've crafted several projects and am deeply engrossed in learning data structures and algorithms. I'm always on the lookout for internship opportunities where I can learn more, contribute, and grow. Let's build something amazing together.`;
+const words = `I am a passionate full-stack developer based in India, currently in my 3rd year of engineering. I've crafted several projects and am deeply engrossed in learning data structures and algorithms. I'm always on the lookout for internship opportunities where I can learn more, contribute, and grow. Let's build something amazing together.`;
 
 const images = [
   "/ketan1.webp",
@@ -13,6 +13,7 @@ const images = [
   "/ketan4.webp",
   "/ketan5.webp",
   "/ketan3.webp",
+  "/ketan6.webp",
 ];
 
 export default function AboutMe() {
@@ -53,7 +54,7 @@ export default function AboutMe() {
           </motion.span>
         </h1>
       </motion.div>
-      <div className="md:flex md:flex-row flex-col gap-0 md:items-center w-full mt-24">
+      <div className="md:flex-row flex-col gap-0 md:items-center w-full mt-24">
         <div className="hidden md:hidden lg:flex justify-center px-12 w-full">
           <div className="flex flex-col gap-10">
             <TextGenerateEffect
@@ -67,7 +68,7 @@ export default function AboutMe() {
               </h1>
             </div>
           </div>
-          <div className="flex w-[50vh] aspect-square justify-center flex-shrink-0">
+          <div className="flex md:w-[50vh] aspect-square justify-center flex-shrink-0">
             <div className="image-container relative w-full">
               <img
                 src={images[imageIndex]}

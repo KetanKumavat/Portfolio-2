@@ -7,6 +7,7 @@ import { ToastContainer } from "react-toastify";
 import { motion } from "framer-motion";
 import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { TbSend } from "react-icons/tb";
 
 export default function Form() {
   const controls = useAnimation();
@@ -63,7 +64,8 @@ export default function Form() {
   return (
     <div
       ref={ref}
-      className="w-full flex flex-col justify-center items-center mt-24 md:mt-32 mb-10 overflow-x-hidden">
+      className="w-full flex flex-col justify-center items-center mt-24 md:mt-32 mb-10 overflow-x-hidden"
+      id="contact">
       <ToastContainer
         position="bottom-right"
         autoClose={2000}
@@ -83,12 +85,12 @@ export default function Form() {
             animate={controls}
             transition={{ duration: 0.2, delay: 0 }}
             className="text-4xl text-white">
-            Get In Touch!
+            Let&apos;s Get In Touch!
           </motion.span>
         </h1>
       </div>
-      <h1 className="text-white/65 mt-10 text-center md:text-2xl text-2xl flex justify-center w-full items-center mb-10 md:mb-0">
-        Currently Looking for Internship and Job Opportunities.{" "}
+      <h1 className="text-white/65 mt-10 px-5 text-center md:text-3xl text-2xl flex justify-center w-full items-center mb-10 md:mb-0">
+        I Am Currently Looking for Internship and Job Opportunities.{" "}
       </h1>
       <div
         id="form"
@@ -145,8 +147,8 @@ export default function Form() {
           <div className="">
             <button
               type="submit"
-              className="px-8 py-2 mt-10 rounded-lg border md:scale-105 scale-90 border-neutral-100 text-black font-bold bg-white/90 hover:bg-transparent hover:text-white/90 transition duration-200 text-xl focus-visible:font-white focus-visible:font-bold focus-visible:bg-transparent focus-visible:border-2-white focus-visible:text-white focus-visible:rounded-xl">
-              Send
+              className="px-8 py-2 mt-10 flex justify-center items-center rounded-lg border md:scale-105 scale-90 border-neutral-100 text-black font-medium bg-white/90 hover:bg-transparent hover:text-white/90 transition duration-200 text-xl focus-visible:font-white focus-visible:font-bold focus-visible:bg-transparent focus-visible:border-2-white focus-visible:text-white focus-visible:rounded-xl">
+              Send <TbSend className="inline-block ml-2" />
             </button>
           </div>
         </form>
