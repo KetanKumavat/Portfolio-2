@@ -5,7 +5,7 @@ import { motion, useAnimation } from "framer-motion";
 import TechStack from "./TechStack.tsx";
 import Experience from "./Experience";
 
-const words = `I am a passionate full-stack developer based in India, currently in my 3rd year of engineering. I've crafted several projects and am deeply engrossed in learning data structures and algorithms. I'm always on the lookout for internship opportunities where I can learn more, contribute, and grow. Let's build something amazing together.`;
+const words = `I’m a full-stack developer with expertise in the MERN stack and NextJs, currently in my 3rd year of engineering. I've crafted several projects and am deeply engrossed in learning data structures and algorithms. I'm always on the lookout for internship opportunities where I can learn more, contribute, create impactful solutions, and grow. Let's build something amazing together!`;
 
 const images = [
   "/ketan1.webp",
@@ -59,7 +59,7 @@ export default function AboutMe() {
           <div className="flex flex-col gap-10">
             <TextGenerateEffect
               words={words}
-              className="text-white/35 px-16 w-full flex justify-center items-center text-justify md:text-left"
+              className="text-white/35 px-16 w-3/4 flex justify-center items-center text-justify md:text-left"
             />
             <div>
               <h1 className="text-2xl hidden md:text-left md:block md:text-2xl ml-16 text-white/80 font-normal">

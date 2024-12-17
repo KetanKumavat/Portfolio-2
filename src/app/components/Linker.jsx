@@ -60,7 +60,7 @@ function Linker() {
           </div>
           <div className="flex items-center gap-2">
             <a
-              href="https://drive.google.com/file/d/1bfueKTyskMh0vxOzQ0CGMR8ZhU37Cmoi/view"
+              href="https://drive.google.com/file/d/1mli-wS1Rzbhwt3tS06wvxQxkVNU0EX-J/view"
               target="_blank"
               className="flex flex-row gap-2 ml-[38vh]"
               id="link3">
@@ -107,7 +107,7 @@ function Linker() {
           </svg>
         </a>
         <a
-          href="https://drive.google.com/file/d/1bfueKTyskMh0vxOzQ0CGMR8ZhU37Cmoi/view"
+          href="https://drive.google.com/file/d/1mli-wS1Rzbhwt3tS06wvxQxkVNU0EX-J/view"
           target="_blank"
           className="flex flex-row gap-2 md:-mt-10">
           <h1 className="text-white text-light text-sm">Resume</h1>

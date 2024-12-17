@@ -11,7 +11,7 @@ function Home() {
   return (
     <motion.div
       className="flex mt-[18vh] flex-col w-full h-fit justify-center items-center z-0 bg-transparent"
-      ref={constraintsRef}>
+      ref={constraintsRef} z-0>
       <div className="flex flex-col justify-center items-center overflow-x-hidden">
         <Image
           src={Ellipse}
@@ -27,7 +27,7 @@ function Home() {
           Full Stack Developer
         </h2>
         <div className="h-4"></div>
-        <div className="py-8 mt-16" id="downloadResume">
+        <div className="py-8 mt-16 -z-50" id="downloadResume">
           <motion.div
             drag
             dragConstraints={constraintsRef}
@@ -40,7 +40,7 @@ function Home() {
               ease: "easeInOut",
             }}
             className="bggrad1"></motion.div>
-          <div className="flex flex-col md:flex-row items-center justify-center mt-20 md:mt-20 gap-4 md:gap-14 space-y-8 md:space-y-0">
+          <div className="flex flex-col md:flex-row items-center justify-center mt-20 md:mt-20 gap-4 md:gap-14 space-y-8 md:space-y-0 -z-40">
             <a href="/KetanKumavat_Resume.pdf" download>
               <button className="button">
                 <div className="dots_border"></div>
