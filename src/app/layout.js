@@ -10,8 +10,9 @@ import { Analytics } from "@vercel/analytics/react";
 const space = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Ketan - Portfolio",
+  title: "Ketan's Portfolio",
   description: "Portfolio of Ketan Kumavat, a Fullstack Developer.",
+  keywords: "Ketan Kumavat, Fullstack Developer, Portfolio",
 };
 
 export default function RootLayout({ children }) {

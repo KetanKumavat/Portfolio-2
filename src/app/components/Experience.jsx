@@ -20,7 +20,7 @@ const Experience = () => {
     {
       title: "Software Developer Intern at Kifayti Health",
       img: "/kifayti_logo.webp",
-      duration: "August 2024 - Present",
+      duration: "August 2024 - October 2024",
       tech: "ReactJs, TailwindCSS, NodeJs, ExpressJs, MariaDB,",
     },
     {
@@ -57,7 +57,8 @@ const Experience = () => {
             initial={{ opacity: 0 }}
             animate={controls}
             transition={{ duration: 0.2, delay: 0 }}
-            className="inline-block">
+            className="inline-block"
+          >
             Experience
           </motion.span>
         </h1>
@@ -66,7 +67,8 @@ const Experience = () => {
         {exp.map((e, i) => (
           <div
             key={i}
-            className="flex flex-col lg:flex-row gap-6 lg:gap-10 mt-12 lg:mt-16">
+            className="flex flex-col lg:flex-row gap-6 lg:gap-10 mt-12 lg:mt-16"
+          >
             <div className="w-full lg:w-1/2 flex justify-center items-center">
               <img
                 src={e.img}
