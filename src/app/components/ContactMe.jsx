@@ -153,7 +153,7 @@ export default function Form() {
                     <div className="w-full flex justify-center items-center">
                         <button
                             onClick={sendEmail}
-                            className="send-button mt-4 w-1/2 flex justify-center items-center gap-2 bg-neutral-700"
+                            className="send-button mt-4 w-1/4 flex justify-center items-center gap-2 bg-neutral-700"
                         >
                             <div class="svg-wrapper-1">
                                 <div class="svg-wrapper">

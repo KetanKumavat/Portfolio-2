@@ -556,7 +556,7 @@ body {
 
 .send-button span {
     display: block;
-    margin-left: 0.3em;
+    margin-left: 0.7em;
     transition: all 0.3s ease-in-out;
 }
 
