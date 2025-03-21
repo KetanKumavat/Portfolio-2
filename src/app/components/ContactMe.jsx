@@ -7,7 +7,6 @@ import { ToastContainer } from "react-toastify";
 import { motion } from "framer-motion";
 import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { TbSend } from "react-icons/tb";
 
 export default function Form() {
     const controls = useAnimation();
@@ -113,7 +112,7 @@ export default function Form() {
                             type="text"
                             id="name"
                             value={name}
-                            className="text-lg font-semibold rounded-lg  block w-full p-2.5 bg-neutral-300 border-gray-600 placeholder-black text-black cursor-auto"
+                            className="text-lg font-semibold rounded-lg  block w-full p-2.5 focus:outline-none placeholder-black text-black cursor-auto"
                             placeholder="Your Name.."
                             onChange={(e) => setName(e.target.value)}
                         />
@@ -129,7 +128,7 @@ export default function Form() {
                             type="email"
                             id="email"
                             value={email}
-                            className=" text-lg font-semibold rounded-lg  block w-full p-2.5  bg-neutral-300 border-gray-600 placeholder-black text-black cursor-auto"
+                            className=" text-lg font-semibold rounded-lg  block w-full p-2.5 focus:outline-none placeholder-black text-black cursor-auto"
                             placeholder="Your Email.."
                             onChange={(e) => setEmail(e.target.value)}
                         />
@@ -145,7 +144,7 @@ export default function Form() {
                             id="message"
                             rows="4"
                             value={message}
-                            className=" text-lg font-semibold rounded-lg  block w-full p-2.5  bg-neutral-300 border-gray-600 placeholder-black text-black cursor-auto"
+                            className=" text-lg font-semibold rounded-lg  block w-full p-2.5 focus:outline-none placeholder-black text-black cursor-auto"
                             placeholder="Leave a comment..."
                             onChange={(e) => setMessage(e.target.value)}
                         />
@@ -153,7 +152,7 @@ export default function Form() {
                     <div className="w-full flex justify-center items-center">
                         <button
                             onClick={sendEmail}
-                            className="send-button mt-4 w-1/4 flex justify-center items-center gap-2 bg-neutral-700"
+                            className="send-button mt-4 w-1/2 md:w-1/4 flex justify-center items-center gap-2 bg-neutral-600 hover:bg-neutral-700 rounded-lg p-2.5"
                         >
                             <div class="svg-wrapper-1">
                                 <div class="svg-wrapper">
