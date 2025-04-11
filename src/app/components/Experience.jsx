@@ -20,7 +20,7 @@ const Experience = () => {
         {
             title: "Frontend Developer at Cyberoze Pvt. Ltd.",
             img: "/go4explore.webp",
-            duration: "November 2024 - Present",
+            duration: "November 2024 - March 2025",
             tech: "ReactJs, Redux, NextJs, TailwindCSS",
         },
         {
